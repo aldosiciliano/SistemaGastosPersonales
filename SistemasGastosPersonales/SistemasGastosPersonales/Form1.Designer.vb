@@ -22,29 +22,44 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Consultar = New Button()
+        Balance = New Label()
+        Label1 = New Label()
         SuspendLayout()
         ' 
-        ' Consultar
+        ' Balance
         ' 
-        Consultar.Location = New Point(588, 61)
-        Consultar.Name = "Consultar"
-        Consultar.Size = New Size(75, 23)
-        Consultar.TabIndex = 0
-        Consultar.Text = "Consultar"
-        Consultar.UseVisualStyleBackColor = True
+        Balance.AutoSize = True
+        Balance.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Balance.Location = New Point(193, 30)
+        Balance.Name = "Balance"
+        Balance.Size = New Size(85, 30)
+        Balance.TabIndex = 0
+        Balance.Text = "Balance"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(193, 71)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(28, 21)
+        Label1.TabIndex = 1
+        Label1.Text = "$..."
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
-        Controls.Add(Consultar)
+        ClientSize = New Size(547, 483)
+        Controls.Add(Label1)
+        Controls.Add(Balance)
         Name = "Form1"
         Text = "Form1"
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
-    Friend WithEvents Consultar As Button
+    Friend WithEvents Balance As Label
+    Friend WithEvents Label1 As Label
 
 End Class
