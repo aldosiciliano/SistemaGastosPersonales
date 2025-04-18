@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales.vbproj": {}
+    "C:\\Users\\pc\\OneDrive\\Escritorio\\SistemaGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales.vbproj": {
+    "C:\\Users\\pc\\OneDrive\\Escritorio\\SistemaGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales.vbproj",
+        "projectUniqueName": "C:\\Users\\pc\\OneDrive\\Escritorio\\SistemaGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales.vbproj",
         "projectName": "SistemasGastosPersonales",
-        "projectPath": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales.vbproj",
-        "packagesPath": "C:\\Users\\IK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales\\obj\\",
+        "projectPath": "C:\\Users\\pc\\OneDrive\\Escritorio\\SistemaGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales.vbproj",
+        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pc\\OneDrive\\Escritorio\\SistemaGastosPersonales\\SistemasGastosPersonales\\SistemasGastosPersonales\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\IK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -82,7 +82,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

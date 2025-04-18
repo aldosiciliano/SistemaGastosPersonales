@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("SistemasGastosPersonales"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0703ee2c3ec3935d94c4873ee93e10cf255e781e"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74e48761bc7803567d461764804c2979e471cf29"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("SistemasGastosPersonales"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("SistemasGastosPersonales"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
