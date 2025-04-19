@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Label1 = New Label()
         Label2 = New Label()
-        TextBoxUserName = New TextBox()
+        TextBoxNombreCuenta = New TextBox()
         TextBoxSaldoInicial = New TextBox()
         btnGuardar = New Button()
         SuspendLayout()
@@ -47,12 +47,12 @@ Partial Class Form1
         Label2.TabIndex = 1
         Label2.Text = "Saldo Inicial"
         ' 
-        ' TextBoxUserName
+        ' TextBoxNombreCuenta
         ' 
-        TextBoxUserName.Location = New Point(331, 167)
-        TextBoxUserName.Name = "TextBoxUserName"
-        TextBoxUserName.Size = New Size(164, 23)
-        TextBoxUserName.TabIndex = 2
+        TextBoxNombreCuenta.Location = New Point(331, 167)
+        TextBoxNombreCuenta.Name = "TextBoxNombreCuenta"
+        TextBoxNombreCuenta.Size = New Size(164, 23)
+        TextBoxNombreCuenta.TabIndex = 2
         ' 
         ' TextBoxSaldoInicial
         ' 
@@ -79,7 +79,7 @@ Partial Class Form1
         ClientSize = New Size(853, 483)
         Controls.Add(btnGuardar)
         Controls.Add(TextBoxSaldoInicial)
-        Controls.Add(TextBoxUserName)
+        Controls.Add(TextBoxNombreCuenta)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Name = "Form1"
@@ -90,7 +90,7 @@ Partial Class Form1
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBoxUserName As TextBox
+    Friend WithEvents TextBoxNombreCuenta As TextBox
     Friend WithEvents TextBoxSaldoInicial As TextBox
     Friend WithEvents btnGuardar As Button
 

@@ -100,3 +100,5 @@ C:\Users\pc\OneDrive\Escritorio\SistemaGastosPersonales\SistemasGastosPersonales
 C:\Users\pc\OneDrive\Escritorio\SistemaGastosPersonales\SistemasGastosPersonales\SistemasGastosPersonales\obj\Debug\net8.0-windows\SistemasGastosPersonales.pdb
 C:\Users\pc\OneDrive\Escritorio\SistemaGastosPersonales\SistemasGastosPersonales\SistemasGastosPersonales\obj\Debug\net8.0-windows\SistemasGastosPersonales.genruntimeconfig.cache
 C:\Users\pc\OneDrive\Escritorio\SistemaGastosPersonales\SistemasGastosPersonales\SistemasGastosPersonales\obj\Debug\net8.0-windows\ref\SistemasGastosPersonales.dll
+C:\Users\aldos\Desktop\SistemaGastosPersonales\SistemasGastosPersonales\SistemasGastosPersonales\obj\Debug\net8.0-windows\SistemasGastosPersonales.FrmRegistroCuenta.resources
+C:\Users\aldos\Desktop\SistemaGastosPersonales\SistemasGastosPersonales\SistemasGastosPersonales\obj\Debug\net8.0-windows\SistemasGastosPersonales.Resources.resources
