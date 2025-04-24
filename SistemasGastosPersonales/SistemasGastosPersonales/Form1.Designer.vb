@@ -23,10 +23,10 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Label1 = New Label()
-        Label2 = New Label()
-        TextBoxNombreCuenta = New TextBox()
-        TextBoxSaldoInicial = New TextBox()
-        btnGuardar = New Button()
+        TxtPassword = New Label()
+        TxtboxUser = New TextBox()
+        TxtBoxPassword = New TextBox()
+        BtnRegistrar = New Button()
         SuspendLayout()
         ' 
         ' Label1
@@ -34,42 +34,42 @@ Partial Class Form1
         Label1.AutoSize = True
         Label1.Location = New Point(331, 149)
         Label1.Name = "Label1"
-        Label1.Size = New Size(108, 15)
+        Label1.Size = New Size(47, 15)
         Label1.TabIndex = 0
-        Label1.Text = "Nombre de Cuenta"
+        Label1.Text = "Usuario"
         ' 
-        ' Label2
+        ' TxtPassword
         ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(331, 207)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(70, 15)
-        Label2.TabIndex = 1
-        Label2.Text = "Saldo Inicial"
+        TxtPassword.AutoSize = True
+        TxtPassword.Location = New Point(331, 207)
+        TxtPassword.Name = "TxtPassword"
+        TxtPassword.Size = New Size(67, 15)
+        TxtPassword.TabIndex = 1
+        TxtPassword.Text = "Contraseña"
         ' 
-        ' TextBoxNombreCuenta
+        ' TxtboxUser
         ' 
-        TextBoxNombreCuenta.Location = New Point(331, 167)
-        TextBoxNombreCuenta.Name = "TextBoxNombreCuenta"
-        TextBoxNombreCuenta.Size = New Size(164, 23)
-        TextBoxNombreCuenta.TabIndex = 2
+        TxtboxUser.Location = New Point(331, 167)
+        TxtboxUser.Name = "TxtboxUser"
+        TxtboxUser.Size = New Size(164, 23)
+        TxtboxUser.TabIndex = 2
         ' 
-        ' TextBoxSaldoInicial
+        ' TxtBoxPassword
         ' 
-        TextBoxSaldoInicial.Location = New Point(331, 225)
-        TextBoxSaldoInicial.Name = "TextBoxSaldoInicial"
-        TextBoxSaldoInicial.Size = New Size(164, 23)
-        TextBoxSaldoInicial.TabIndex = 3
+        TxtBoxPassword.Location = New Point(331, 225)
+        TxtBoxPassword.Name = "TxtBoxPassword"
+        TxtBoxPassword.Size = New Size(164, 23)
+        TxtBoxPassword.TabIndex = 3
         ' 
-        ' btnGuardar
+        ' BtnRegistrar
         ' 
-        btnGuardar.Cursor = Cursors.No
-        btnGuardar.Location = New Point(364, 263)
-        btnGuardar.Name = "btnGuardar"
-        btnGuardar.Size = New Size(75, 23)
-        btnGuardar.TabIndex = 4
-        btnGuardar.Text = "Guardar"
-        btnGuardar.UseVisualStyleBackColor = True
+        BtnRegistrar.Cursor = Cursors.No
+        BtnRegistrar.Location = New Point(364, 263)
+        BtnRegistrar.Name = "BtnRegistrar"
+        BtnRegistrar.Size = New Size(75, 23)
+        BtnRegistrar.TabIndex = 4
+        BtnRegistrar.Text = "Registrar"
+        BtnRegistrar.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
@@ -77,10 +77,10 @@ Partial Class Form1
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaption
         ClientSize = New Size(853, 483)
-        Controls.Add(btnGuardar)
-        Controls.Add(TextBoxSaldoInicial)
-        Controls.Add(TextBoxNombreCuenta)
-        Controls.Add(Label2)
+        Controls.Add(BtnRegistrar)
+        Controls.Add(TxtBoxPassword)
+        Controls.Add(TxtboxUser)
+        Controls.Add(TxtPassword)
         Controls.Add(Label1)
         Name = "Form1"
         Text = "Form1"
@@ -89,9 +89,9 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBoxNombreCuenta As TextBox
-    Friend WithEvents TextBoxSaldoInicial As TextBox
-    Friend WithEvents btnGuardar As Button
+    Friend WithEvents TxtPassword As Label
+    Friend WithEvents TxtboxUser As TextBox
+    Friend WithEvents TxtBoxPassword As TextBox
+    Friend WithEvents BtnRegistrar As Button
 
 End Class
