@@ -1,7 +1,7 @@
 ﻿
 Imports System.Data.SQLite
 Imports SistemasGastosPersonales.Conexion
-Public Class Form1
+Public Class Registro
     Private Sub BtnRegistrar_Click(sender As Object, e As EventArgs) Handles BtnRegistrar.Click
         Dim Usuario As String = TxtboxUser.Text.Trim()
         Dim Contraseña As String = TxtBoxPassword.Text.Trim()
@@ -15,13 +15,16 @@ Public Class Form1
             MessageBox.Show("Por favor, ingrese una contraseña.")
             Return
         End If
+        'Hashear contraseña
+        Dim ContraseñaHasheada As String = Hash.HashearSHA256(Contraseña)
+
         Try
             Using conn = Conexion.ObtenerConexion()
                 Dim query As String = "INSERT INTO Cuentas (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)"
                 Using comando As New SQLiteCommand(query, conn)
                     ' Agregar parámetros para evitar inyección SQL
                     comando.Parameters.AddWithValue("@Usuario", Usuario)
-                    comando.Parameters.AddWithValue("@Contraseña", Contraseña)
+                    comando.Parameters.AddWithValue("@Contraseña", ContraseñaHasheada)
                     ' Ejecutar el comando
                     Dim filasAfectadas As Integer = comando.ExecuteNonQuery()
                     If filasAfectadas > 0 Then
@@ -35,6 +38,25 @@ Public Class Form1
             ' Manejar errores
             MessageBox.Show($"Ocurrió un error al registrar la cuenta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub LinkIniciarSesion_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkIniciarSesion.LinkClicked
+        Dim frmIniciarSesion As New FrmIniciarSesion()
+        ' Suscribir el evento FormClosed
+        AddHandler frmIniciarSesion.FormClosed, AddressOf FrmIniciarSesion_FormClosed
+
+        frmIniciarSesion.Show()
+        Me.Hide()
+    End Sub
+
+    ' Manejador del evento FormClosed
+    Private Sub FrmIniciarSesion_FormClosed(sender As Object, e As FormClosedEventArgs)
+        ' Cerrar el formulario Registro cuando FrmIniciarSesion se cierre
+        Me.Close()
+    End Sub
+
+    Private Sub Registro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TxtBoxPassword.PasswordChar = "*"
     End Sub
 
 End Class

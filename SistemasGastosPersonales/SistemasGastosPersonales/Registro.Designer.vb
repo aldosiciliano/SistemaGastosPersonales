@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class Registro
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -27,6 +27,7 @@ Partial Class Form1
         TxtboxUser = New TextBox()
         TxtBoxPassword = New TextBox()
         BtnRegistrar = New Button()
+        LinkIniciarSesion = New LinkLabel()
         SuspendLayout()
         ' 
         ' Label1
@@ -71,19 +72,30 @@ Partial Class Form1
         BtnRegistrar.Text = "Registrar"
         BtnRegistrar.UseVisualStyleBackColor = True
         ' 
-        ' Form1
+        ' LinkIniciarSesion
+        ' 
+        LinkIniciarSesion.AutoSize = True
+        LinkIniciarSesion.Location = New Point(765, 9)
+        LinkIniciarSesion.Name = "LinkIniciarSesion"
+        LinkIniciarSesion.Size = New Size(76, 15)
+        LinkIniciarSesion.TabIndex = 5
+        LinkIniciarSesion.TabStop = True
+        LinkIniciarSesion.Text = "Iniciar Sesion"
+        ' 
+        ' Registro
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaption
         ClientSize = New Size(853, 483)
+        Controls.Add(LinkIniciarSesion)
         Controls.Add(BtnRegistrar)
         Controls.Add(TxtBoxPassword)
         Controls.Add(TxtboxUser)
         Controls.Add(TxtPassword)
         Controls.Add(Label1)
-        Name = "Form1"
-        Text = "Form1"
+        Name = "Registro"
+        Text = "Registro"
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -93,5 +105,6 @@ Partial Class Form1
     Friend WithEvents TxtboxUser As TextBox
     Friend WithEvents TxtBoxPassword As TextBox
     Friend WithEvents BtnRegistrar As Button
+    Friend WithEvents LinkIniciarSesion As LinkLabel
 
 End Class
