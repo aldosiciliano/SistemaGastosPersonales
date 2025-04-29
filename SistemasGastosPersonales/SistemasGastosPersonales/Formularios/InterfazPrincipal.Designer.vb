@@ -62,17 +62,17 @@ Partial Class InterfazPrincipal
         Guna2HtmlLabel1.BackColor = Color.Transparent
         Guna2HtmlLabel1.Location = New Point(109, 34)
         Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Guna2HtmlLabel1.Size = New Size(0, 0)
+        Guna2HtmlLabel1.Size = New Size(3, 2)
         Guna2HtmlLabel1.TabIndex = 0
         Guna2HtmlLabel1.Text = Nothing
         ' 
         ' lblBalance
         ' 
         lblBalance.BackColor = Color.Transparent
-        lblBalance.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblBalance.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblBalance.Location = New Point(122, 62)
         lblBalance.Name = "lblBalance"
-        lblBalance.Size = New Size(74, 20)
+        lblBalance.Size = New Size(65, 22)
         lblBalance.TabIndex = 1
         lblBalance.Text = "Balance:"
         ' 
@@ -97,7 +97,7 @@ Partial Class InterfazPrincipal
         cbxTipo.FillColor = Color.Azure
         cbxTipo.FocusedColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         cbxTipo.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        cbxTipo.Font = New Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        cbxTipo.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         cbxTipo.ForeColor = Color.FromArgb(CByte(68), CByte(88), CByte(112))
         cbxTipo.ItemHeight = 30
         cbxTipo.Items.AddRange(New Object() {"Ingreso", "Gastos", "Otros"})
@@ -155,7 +155,7 @@ Partial Class InterfazPrincipal
         btnAdd.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         btnAdd.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         btnAdd.FillColor = Color.DodgerBlue
-        btnAdd.Font = New Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnAdd.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btnAdd.ForeColor = Color.White
         btnAdd.Location = New Point(601, 159)
         btnAdd.Name = "btnAdd"
@@ -171,7 +171,7 @@ Partial Class InterfazPrincipal
         btn2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         btn2.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         btn2.FillColor = Color.MediumSeaGreen
-        btn2.Font = New Font("Arial Rounded MT Bold", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btn2.Font = New Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         btn2.ForeColor = Color.White
         btn2.Location = New Point(613, 210)
         btn2.Name = "btn2"
@@ -195,8 +195,7 @@ Partial Class InterfazPrincipal
         DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
         Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Guna2DataGridView1.ColumnHeadersHeight = 18
-        Guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Guna2DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4})
         DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = Color.White
@@ -223,8 +222,8 @@ Partial Class InterfazPrincipal
         Guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None
         Guna2DataGridView1.ThemeStyle.HeaderStyle.Font = New Font("Segoe UI", 9F)
         Guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White
-        Guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 18
+        Guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 17
         Guna2DataGridView1.ThemeStyle.ReadOnly = False
         Guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White
         Guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
@@ -368,7 +367,7 @@ Partial Class InterfazPrincipal
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.LightSkyBlue
+        BackColor = SystemColors.ActiveCaption
         ClientSize = New Size(813, 550)
         Controls.Add(Guna2ShadowPanel1)
         Controls.Add(Guna2DataGridView1)

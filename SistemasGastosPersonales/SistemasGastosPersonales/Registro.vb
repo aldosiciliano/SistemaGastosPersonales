@@ -44,11 +44,9 @@ Public Class Registro
         Dim frmIniciarSesion As New FrmIniciarSesion()
         ' Suscribir el evento FormClosed
         AddHandler frmIniciarSesion.FormClosed, AddressOf FrmIniciarSesion_FormClosed
-
         frmIniciarSesion.Show()
         Me.Hide()
     End Sub
-
     ' Manejador del evento FormClosed
     Private Sub FrmIniciarSesion_FormClosed(sender As Object, e As FormClosedEventArgs)
         ' Cerrar el formulario Registro cuando FrmIniciarSesion se cierre
@@ -56,7 +54,13 @@ Public Class Registro
     End Sub
 
     Private Sub Registro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TxtBoxPassword.PasswordChar = "*"
+        TxtBoxPassword.PasswordChar = "*"
+    End Sub
+
+    Private Sub TxtboxUser_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtboxUser.KeyDown, TxtBoxPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            BtnRegistrar.PerformClick()
+        End If
     End Sub
 
 End Class
