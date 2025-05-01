@@ -30,6 +30,7 @@ Partial Class Registro
         '
         'BtnRegistrar
         '
+        Me.BtnRegistrar.BorderRadius = 10
         Me.BtnRegistrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.BtnRegistrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.BtnRegistrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
