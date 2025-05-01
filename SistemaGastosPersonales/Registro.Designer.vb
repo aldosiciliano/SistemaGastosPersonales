@@ -41,6 +41,7 @@ Partial Class Registro
         Me.BtnRegistrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.BtnRegistrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.BtnRegistrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnRegistrar.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.BtnRegistrar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnRegistrar.ForeColor = System.Drawing.Color.White
         Me.BtnRegistrar.Location = New System.Drawing.Point(116, 410)
@@ -90,12 +91,13 @@ Partial Class Registro
         'LinkSesion
         '
         Me.LinkSesion.AutoSize = True
-        Me.LinkSesion.Location = New System.Drawing.Point(344, 9)
+        Me.LinkSesion.LinkColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.LinkSesion.Location = New System.Drawing.Point(153, 459)
         Me.LinkSesion.Name = "LinkSesion"
-        Me.LinkSesion.Size = New System.Drawing.Size(70, 13)
+        Me.LinkSesion.Size = New System.Drawing.Size(107, 13)
         Me.LinkSesion.TabIndex = 2
         Me.LinkSesion.TabStop = True
-        Me.LinkSesion.Text = "Iniciar Sesion"
+        Me.LinkSesion.Text = "Ya tengo una cuenta"
         '
         'TxtboxNombre
         '

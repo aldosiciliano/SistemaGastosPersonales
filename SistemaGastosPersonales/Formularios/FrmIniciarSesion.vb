@@ -57,9 +57,6 @@ Public Class FrmIniciarSesion
         End If
     End Sub
 
-    Private Sub TxtboxUserSesion_TextChanged(sender As Object, e As EventArgs) Handles TxtboxUserSesion.TextChanged
-
-    End Sub
     Private Sub TxtboxUserSesion_Enter(sender As Object, e As EventArgs) Handles TxtboxUserSesion.Enter
         TxtboxUserSesion.Clear()
     End Sub

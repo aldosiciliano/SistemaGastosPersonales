@@ -1,29 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\",
+  "WorkspaceRootPath": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\sistemagastospersonales\\registro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\registro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|c:\\users\\sofi\\desktop\\sistemagastospersonales\\sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\sistemagastospersonales\\registro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|c:\\users\\ik\\desktop\\prog ii 2025\\sistemagastospersonales\\sistemagastospersonales\\registro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\registro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\sistemagastospersonales\\conexion\\conexion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\conexion\\conexion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|c:\\users\\ik\\desktop\\prog ii 2025\\sistemagastospersonales\\sistemagastospersonales\\formularios\\interfazprincipal.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\formularios\\interfazprincipal.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\sistemagastospersonales\\formularios\\interfazprincipal.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\sistemagastospersonales\\formularios\\interfazprincipal.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\formularios\\interfazprincipal.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
@@ -34,80 +30,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "InterfazPrincipal.vb [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb",
-              "RelativeDocumentMoniker": "SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb",
-              "ToolTip": "C:\\Users\\pc\\OneDrive\\Escritorio\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\pc\\OneDrive\\Escritorio\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-04-30T14:25:20.988Z",
-              "IsPinned": true
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmIniciarSesion.vb",
-              "DocumentMoniker": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
-              "RelativeDocumentMoniker": "SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
-              "ToolTip": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
-              "RelativeToolTip": "SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAkwFEAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-05-01T04:54:16.31Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Registro.vb",
-              "DocumentMoniker": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Registro.vb",
-              "RelativeDocumentMoniker": "SistemaGastosPersonales\\Registro.vb",
-              "ToolTip": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Registro.vb",
-              "RelativeToolTip": "SistemaGastosPersonales\\Registro.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-05-01T04:52:59.569Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmIniciarSesion.vb [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
-              "RelativeDocumentMoniker": "SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
-              "ToolTip": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb [Dise\u00F1o]",
-              "RelativeToolTip": "SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-05-01T04:11:57.299Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Registro.vb [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Registro.vb",
+              "DocumentMoniker": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemaGastosPersonales\\Registro.vb",
               "RelativeDocumentMoniker": "SistemaGastosPersonales\\Registro.vb",
-              "ToolTip": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Registro.vb [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemaGastosPersonales\\Registro.vb [Dise\u00F1o]",
               "RelativeToolTip": "SistemaGastosPersonales\\Registro.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-04-30T13:19:12.523Z",
+              "WhenOpened": "2025-05-01T19:12:30.444Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Conexion.vb",
-              "DocumentMoniker": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Conexion\\Conexion.vb",
-              "RelativeDocumentMoniker": "SistemaGastosPersonales\\Conexion\\Conexion.vb",
-              "ToolTip": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Conexion\\Conexion.vb",
-              "RelativeToolTip": "SistemaGastosPersonales\\Conexion\\Conexion.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "InterfazPrincipal.vb",
+              "DocumentMoniker": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb",
+              "RelativeDocumentMoniker": "SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb",
+              "ToolTip": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb",
+              "RelativeToolTip": "SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-04-30T01:57:25.766Z"
+              "WhenOpened": "2025-05-01T18:51:14.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InterfazPrincipal.vb [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb",
+              "RelativeDocumentMoniker": "SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb",
+              "ToolTip": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb [Dise\u00F1o]",
+              "RelativeToolTip": "SistemaGastosPersonales\\Formularios\\InterfazPrincipal.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-01T14:15:14.909Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmIniciarSesion.vb",
+              "DocumentMoniker": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
+              "RelativeDocumentMoniker": "SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
+              "ToolTip": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb*",
+              "RelativeToolTip": "SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-01T14:15:15.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmIniciarSesion.vb [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
+              "RelativeDocumentMoniker": "SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
+              "ToolTip": "C:\\Users\\IK\\Desktop\\PROG II 2025\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb [Dise\u00F1o]*",
+              "RelativeToolTip": "SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-05-01T14:15:15.07Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

@@ -130,9 +130,6 @@ Public Class Registro
             TxtboxNombre.Text = "Nombre"
         End If
     End Sub
-    Private Sub TxtboxEmail_TextChanged(sender As Object, e As EventArgs) Handles TxtboxEmail.TextChanged
-
-    End Sub
 
     Private Sub TxtboxEmail_Enter(sender As Object, e As EventArgs) Handles TxtboxEmail.Enter
         TxtboxEmail.Clear()
@@ -142,9 +139,6 @@ Public Class Registro
         If String.IsNullOrWhiteSpace(TxtboxEmail.Text) Then
             TxtboxEmail.Text = "Correo"
         End If
-    End Sub
-    Private Sub TxtboxDNI_TextChanged(sender As Object, e As EventArgs) Handles TxtboxDNI.TextChanged
-
     End Sub
 
     Private Sub TxtboxDNI_Enter(sender As Object, e As EventArgs) Handles TxtboxDNI.Enter
@@ -158,9 +152,7 @@ Public Class Registro
         End If
     End Sub
 
-    Private Sub TxtboxUser_TextChanged(sender As Object, e As EventArgs) Handles TxtboxUser.TextChanged
 
-    End Sub
     Private Sub TxtboxUser_Enter(sender As Object, e As EventArgs) Handles TxtboxUser.Enter
         TxtboxUser.Clear()
     End Sub
@@ -170,9 +162,7 @@ Public Class Registro
             TxtboxUser.Text = "Usuario"
         End If
     End Sub
-    Private Sub TxtboxContraseña_TextChanged(sender As Object, e As EventArgs) Handles TxtBoxPassword.TextChanged
 
-    End Sub
     Private Sub TxtboxPassword_Enter(sender As Object, e As EventArgs) Handles TxtBoxPassword.Enter
         TxtBoxPassword.Clear()
     End Sub

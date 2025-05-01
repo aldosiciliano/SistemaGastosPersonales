@@ -35,6 +35,7 @@ Partial Class FrmIniciarSesion
         Me.BtnIniciarSesion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.BtnIniciarSesion.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.BtnIniciarSesion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnIniciarSesion.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.BtnIniciarSesion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnIniciarSesion.ForeColor = System.Drawing.Color.White
         Me.BtnIniciarSesion.Location = New System.Drawing.Point(117, 302)

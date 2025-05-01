@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\Conexion.vb" />
+    <Compile Include="Modelos\Perfil.vb" />
     <Compile Include="Registro.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -121,7 +122,6 @@
     <Compile Include="Formularios\InterfazPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modelos\Balance.vb" />
     <Compile Include="Modelos\Categoria.vb" />
     <Compile Include="Modelos\Cuenta.vb" />
     <Compile Include="Modelos\Etiqueta.vb" />
