@@ -28,18 +28,6 @@ Public Class Registro
         Dim Apellido As String = TxtboxApellido.Text.Trim()
         Dim Email As String = TxtboxEmail.Text.Trim()
 
-        'Validacion basica
-        If String.IsNullOrWhiteSpace(DNI) OrElse
-       String.IsNullOrWhiteSpace(Nombre) OrElse
-       String.IsNullOrWhiteSpace(Apellido) OrElse
-       String.IsNullOrWhiteSpace(Email) OrElse
-       String.IsNullOrWhiteSpace(Usuario) OrElse
-       String.IsNullOrWhiteSpace(Contraseña) Then
-
-            MessageBox.Show("Por favor, completá todos los campos antes de registrarte.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
-
         'Hashear contraseña
         Dim ContraseñaHasheada As String = Hash.HashearSHA256(Contraseña)
 
@@ -137,7 +125,7 @@ Public Class Registro
     End Sub
 
     Private Sub TxtboxNombre_Leave(sender As Object, e As EventArgs) Handles TxtboxNombre.Leave
-        ' Si el campo está vacío, restablecer el texto predeterminado
+
         If String.IsNullOrWhiteSpace(TxtboxNombre.Text) Then
             TxtboxNombre.Text = "Nombre"
         End If
@@ -164,7 +152,7 @@ Public Class Registro
     End Sub
 
     Private Sub TxtboxDNI_Leave(sender As Object, e As EventArgs) Handles TxtboxDNI.Leave
-        ' Si el campo está vacío, restablecer el texto predeterminado
+
         If String.IsNullOrWhiteSpace(TxtboxDNI.Text) Then
             TxtboxDNI.Text = "DNI"
         End If

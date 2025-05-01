@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\sistemagastospersonales\\registro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\registro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|c:\\users\\sofi\\desktop\\sistemagastospersonales\\sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
@@ -15,8 +15,8 @@
       "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\registro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\sistemagastospersonales\\registro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\registro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|c:\\users\\sofi\\desktop\\sistemagastospersonales\\sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|solutionrelative:sistemagastospersonales\\formularios\\frminiciarsesion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD1FAABD-E0BD-4873-91D8-9EF39F7B61BC}|SistemaGastosPersonales\\SistemaGastosPersonales.vbproj|C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\sistemagastospersonales\\conexion\\conexion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -54,13 +54,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "FrmIniciarSesion.vb",
               "DocumentMoniker": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
               "RelativeDocumentMoniker": "SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
               "ToolTip": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
               "RelativeToolTip": "SistemaGastosPersonales\\Formularios\\FrmIniciarSesion.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAkwFEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-05-01T04:54:16.31Z",
               "EditorCaption": ""
@@ -73,7 +73,7 @@
               "RelativeDocumentMoniker": "SistemaGastosPersonales\\Registro.vb",
               "ToolTip": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Registro.vb",
               "RelativeToolTip": "SistemaGastosPersonales\\Registro.vb",
-              "ViewState": "AgIAAKgAAAAAAAAAAAAAAKwAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-05-01T04:52:59.569Z",
               "EditorCaption": ""
@@ -92,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Registro.vb [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Sofi\\Desktop\\SistemaGastosPersonales\\SistemaGastosPersonales\\Registro.vb",
               "RelativeDocumentMoniker": "SistemaGastosPersonales\\Registro.vb",
@@ -112,8 +112,7 @@
               "RelativeToolTip": "SistemaGastosPersonales\\Conexion\\Conexion.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-04-30T01:57:25.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T01:57:25.766Z"
             }
           ]
         }
