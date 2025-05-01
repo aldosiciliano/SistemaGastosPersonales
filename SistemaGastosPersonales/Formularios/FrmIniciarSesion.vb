@@ -12,13 +12,13 @@ Public Class FrmIniciarSesion
 
         Try
             Using conn As SQLiteConnection = Conexion.ObtenerConexion()
-                Dim query = "SELECT Contraseña FROM Cuentas WHERE Usuario = @Usuario"
+                Dim query = "SELECT Contraseña FROM Usuarios WHERE Usuario = @Usuario"
                 Using cmd As New SQLiteCommand(query, conn)
                     cmd.Parameters.AddWithValue("@Usuario", Usuario)
 
                     Dim result = cmd.ExecuteScalar()
                     If result Is Nothing Then
-                        MessageBox.Show("Usuario o contraseña incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        MessageBox.Show("Usuario o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Return
                     End If
 

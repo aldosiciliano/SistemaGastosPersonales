@@ -19,7 +19,7 @@ Public Class Registro
 
         Try
             Using conn = Conexion.ObtenerConexion()
-                Dim query As String = "INSERT INTO Cuentas (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)"
+                Dim query As String = "INSERT INTO Usuarios (Usuario, Contraseña) VALUES (@Usuario, @Contraseña)"
                 Using comando As New SQLiteCommand(query, conn)
                     ' Agregar parámetros para evitar inyección SQL
                     comando.Parameters.AddWithValue("@Usuario", Usuario)
@@ -27,7 +27,7 @@ Public Class Registro
                     ' Ejecutar el comando
                     Dim filasAfectadas As Integer = comando.ExecuteNonQuery()
                     If filasAfectadas > 0 Then
-                        MessageBox.Show("Cuenta registrar exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        MessageBox.Show("Cuenta registrada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         MessageBox.Show("No se pudo registrar la cuenta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
@@ -68,5 +68,13 @@ Public Class Registro
         AddHandler frmIniciarSesion.FormClosed, AddressOf FrmIniciarSesion_FormClosed
         frmIniciarSesion.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Guna2PictureBox1_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox1.Click
+
+    End Sub
+
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Guna2TextBox1.TextChanged
+
     End Sub
 End Class
