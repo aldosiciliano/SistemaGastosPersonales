@@ -47,6 +47,11 @@ SistemaGastosPersonales
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:SistemaGastosPersonales.My.Resources.Resources.lupa__1_">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:SistemaGastosPersonales.My.Resources.Resources.usuario">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

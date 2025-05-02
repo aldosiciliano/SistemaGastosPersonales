@@ -22,19 +22,22 @@ Partial Class InterfazPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InterfazPrincipal))
         Me.cbxTipo = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.cbxCategoria = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.DateTimePicker = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.DataGridViewHistorial = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LabelMonto = New System.Windows.Forms.Label()
         Me.txtMonto = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnAñadir = New Guna.UI2.WinForms.Guna2Button()
-        Me.tbxFiltro = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtBuscar = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2TabControl1 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.txtDescripcion = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Perfil = New System.Windows.Forms.TabPage()
         Me.btnEditarPerfil = New Guna.UI2.WinForms.Guna2Button()
@@ -50,14 +53,14 @@ Partial Class InterfazPrincipal
         Me.btnNombre = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.ColumnFecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColumTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnMonto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtDescripcion = New Guna.UI2.WinForms.Guna2TextBox()
         CType(Me.DataGridViewHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Perfil.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,27 +115,28 @@ Partial Class InterfazPrincipal
         '
         'DataGridViewHistorial
         '
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.DataGridViewHistorial.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewHistorial.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.DataGridViewHistorial.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewHistorial.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewHistorial.ColumnHeadersHeight = 30
         Me.DataGridViewHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DataGridViewHistorial.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnFecha, Me.ColumTipo, Me.ColumnCategoria, Me.ColumnMonto, Me.Descripcion})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewHistorial.DefaultCellStyle = DataGridViewCellStyle9
+        Me.DataGridViewHistorial.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnFecha, Me.ColumnTipo, Me.ColumnCategoria, Me.ColumnMonto, Me.Descripcion})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightBlue
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewHistorial.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewHistorial.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DataGridViewHistorial.Location = New System.Drawing.Point(75, 322)
         Me.DataGridViewHistorial.Name = "DataGridViewHistorial"
@@ -161,15 +165,15 @@ Partial Class InterfazPrincipal
         Me.DataGridViewHistorial.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DataGridViewHistorial.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Label2
+        'LabelMonto
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(368, 52)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(104, 31)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "$Monto"
+        Me.LabelMonto.AutoSize = True
+        Me.LabelMonto.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelMonto.Location = New System.Drawing.Point(368, 52)
+        Me.LabelMonto.Name = "LabelMonto"
+        Me.LabelMonto.Size = New System.Drawing.Size(29, 31)
+        Me.LabelMonto.TabIndex = 4
+        Me.LabelMonto.Text = "$"
         '
         'txtMonto
         '
@@ -207,23 +211,24 @@ Partial Class InterfazPrincipal
         Me.btnAñadir.TabIndex = 6
         Me.btnAñadir.Text = "Añadir"
         '
-        'tbxFiltro
+        'txtBuscar
         '
-        Me.tbxFiltro.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbxFiltro.DefaultText = ""
-        Me.tbxFiltro.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.tbxFiltro.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.tbxFiltro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tbxFiltro.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tbxFiltro.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbxFiltro.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.tbxFiltro.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbxFiltro.Location = New System.Drawing.Point(581, 268)
-        Me.tbxFiltro.Name = "tbxFiltro"
-        Me.tbxFiltro.PlaceholderText = ""
-        Me.tbxFiltro.SelectedText = ""
-        Me.tbxFiltro.Size = New System.Drawing.Size(200, 36)
-        Me.tbxFiltro.TabIndex = 7
+        Me.txtBuscar.BorderRadius = 10
+        Me.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtBuscar.DefaultText = ""
+        Me.txtBuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtBuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtBuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtBuscar.Location = New System.Drawing.Point(581, 280)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.PlaceholderText = ""
+        Me.txtBuscar.SelectedText = ""
+        Me.txtBuscar.Size = New System.Drawing.Size(200, 36)
+        Me.txtBuscar.TabIndex = 7
         '
         'Guna2TabControl1
         '
@@ -257,8 +262,9 @@ Partial Class InterfazPrincipal
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.White
-        Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.tbxFiltro)
+        Me.TabPage1.Controls.Add(Me.Guna2PictureBox3)
+        Me.TabPage1.Controls.Add(Me.LabelMonto)
+        Me.TabPage1.Controls.Add(Me.txtBuscar)
         Me.TabPage1.Controls.Add(Me.cbxTipo)
         Me.TabPage1.Controls.Add(Me.btnAñadir)
         Me.TabPage1.Controls.Add(Me.cbxCategoria)
@@ -273,6 +279,38 @@ Partial Class InterfazPrincipal
         Me.TabPage1.Size = New System.Drawing.Size(868, 641)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Gastos Personales "
+        '
+        'Guna2PictureBox3
+        '
+        Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox3.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox3.Image = Global.SistemaGastosPersonales.My.Resources.Resources.lupa__1_
+        Me.Guna2PictureBox3.ImageRotate = 0!
+        Me.Guna2PictureBox3.Location = New System.Drawing.Point(541, 280)
+        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
+        Me.Guna2PictureBox3.Size = New System.Drawing.Size(34, 36)
+        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.Guna2PictureBox3.TabIndex = 9
+        Me.Guna2PictureBox3.TabStop = False
+        '
+        'txtDescripcion
+        '
+        Me.txtDescripcion.BorderRadius = 10
+        Me.txtDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDescripcion.DefaultText = ""
+        Me.txtDescripcion.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtDescripcion.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtDescripcion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDescripcion.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDescripcion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDescripcion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtDescripcion.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDescripcion.Location = New System.Drawing.Point(581, 129)
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.PlaceholderText = ""
+        Me.txtDescripcion.SelectedText = ""
+        Me.txtDescripcion.Size = New System.Drawing.Size(200, 36)
+        Me.txtDescripcion.TabIndex = 5
         '
         'Guna2PictureBox2
         '
@@ -483,10 +521,10 @@ Partial Class InterfazPrincipal
         Me.ColumnFecha.HeaderText = "Fecha"
         Me.ColumnFecha.Name = "ColumnFecha"
         '
-        'ColumTipo
+        'ColumnTipo
         '
-        Me.ColumTipo.HeaderText = "Tipo"
-        Me.ColumTipo.Name = "ColumTipo"
+        Me.ColumnTipo.HeaderText = "Tipo"
+        Me.ColumnTipo.Name = "ColumnTipo"
         '
         'ColumnCategoria
         '
@@ -503,25 +541,6 @@ Partial Class InterfazPrincipal
         Me.Descripcion.HeaderText = "Descripcion"
         Me.Descripcion.Name = "Descripcion"
         '
-        'txtDescripcion
-        '
-        Me.txtDescripcion.BorderRadius = 10
-        Me.txtDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtDescripcion.DefaultText = ""
-        Me.txtDescripcion.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtDescripcion.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtDescripcion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtDescripcion.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtDescripcion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtDescripcion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtDescripcion.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtDescripcion.Location = New System.Drawing.Point(581, 129)
-        Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.PlaceholderText = ""
-        Me.txtDescripcion.SelectedText = ""
-        Me.txtDescripcion.Size = New System.Drawing.Size(200, 36)
-        Me.txtDescripcion.TabIndex = 5
-        '
         'InterfazPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -530,12 +549,14 @@ Partial Class InterfazPrincipal
         Me.ClientSize = New System.Drawing.Size(1046, 644)
         Me.Controls.Add(Me.Guna2TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "InterfazPrincipal"
         Me.Text = "Gastos Personales "
         CType(Me.DataGridViewHistorial, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Perfil.ResumeLayout(False)
         Me.Perfil.PerformLayout()
@@ -548,10 +569,10 @@ Partial Class InterfazPrincipal
     Friend WithEvents cbxCategoria As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents DateTimePicker As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents DataGridViewHistorial As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LabelMonto As Label
     Friend WithEvents txtMonto As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btnAñadir As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents tbxFiltro As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtBuscar As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2TabControl1 As Guna.UI2.WinForms.Guna2TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents Perfil As TabPage
@@ -568,10 +589,11 @@ Partial Class InterfazPrincipal
     Friend WithEvents btnGuardarPerfil As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PerfilUserLabel As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents txtDescripcion As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2PictureBox3 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents ColumnFecha As DataGridViewTextBoxColumn
-    Friend WithEvents ColumTipo As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnTipo As DataGridViewTextBoxColumn
     Friend WithEvents ColumnCategoria As DataGridViewTextBoxColumn
     Friend WithEvents ColumnMonto As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents txtDescripcion As Guna.UI2.WinForms.Guna2TextBox
 End Class

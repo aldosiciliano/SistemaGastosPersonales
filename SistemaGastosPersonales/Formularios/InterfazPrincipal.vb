@@ -7,6 +7,7 @@ Public Class InterfazPrincipal
         cbxTipo.Items.Add("Ingreso")
         cbxTipo.Items.Add("Gasto")
         CargarMovimientos()
+        'CalcularMontoDisponible()
         'Cargar el nombre de la persona de la bd
         Dim nombrePersona As String = ""
         Dim query As String = "SELECT Nombre FROM Perfil WHERE UsuarioId = (SELECT IdUsuario FROM Usuarios WHERE Usuario = @Usuario)
@@ -139,6 +140,7 @@ Public Class InterfazPrincipal
                     insertarCmd.ExecuteNonQuery()
                     MessageBox.Show("Movimiento guardado correctamente.")
                     CargarMovimientos()
+                    CalcularMontoDisponible()
                 End Using
 
             Catch ex As Exception
@@ -181,6 +183,60 @@ Public Class InterfazPrincipal
         Catch ex As Exception
             MessageBox.Show("Error al cargar movimientos: " & ex.Message)
         End Try
+        CalcularMontoDisponible()
     End Sub
 
+    ' Funcion para filtar o buscar en el DataGridView
+    Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
+        Dim filtro As String = txtBuscar.Text.Trim().ToLower()
+
+        For Each fila As DataGridViewRow In DataGridViewHistorial.Rows
+            If fila.IsNewRow Then Continue For
+
+            Dim visible As Boolean = False
+
+            For Each celda As DataGridViewCell In fila.Cells
+                If celda.Value IsNot Nothing Then
+                    ' Convertimos todo a string en minúsculas para comparar
+                    Dim valorCelda As String = celda.Value.ToString().ToLower()
+
+                    ' Si coincide el texto (ya sea fecha, descripción, etc.)
+                    If valorCelda.Contains(filtro) Then
+                        visible = True
+                        Exit For
+                    End If
+                End If
+            Next
+
+            fila.Visible = visible
+        Next
+    End Sub
+
+    Private Sub txtMonto_TextChanged(sender As Object, e As EventArgs) Handles txtMonto.TextChanged
+
+    End Sub
+
+    ' Funcion que calcula el monto disponible
+    Private Sub CalcularMontoDisponible()
+        Dim montoDisponible As Decimal = 0
+
+        For Each fila As DataGridViewRow In DataGridViewHistorial.Rows
+            If Not fila.IsNewRow Then
+                Try
+                    Dim tipo As String = fila.Cells(1).Value.ToString()
+                    Dim monto As Decimal = Convert.ToDecimal(fila.Cells(3).Value)
+
+                    If tipo = "Ingreso" Then
+                        montoDisponible += monto
+                    ElseIf tipo = "Gasto" Then
+                        montoDisponible -= monto
+                    End If
+                Catch ex As Exception
+                    ' Si una celda viene vacía o mal formateada, la ignora
+                End Try
+            End If
+        Next
+
+        LabelMonto.Text = "$" & montoDisponible.ToString("N2")
+    End Sub
 End Class
