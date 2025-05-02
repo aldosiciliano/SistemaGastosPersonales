@@ -168,4 +168,7 @@ Public Class Registro
         End If
     End Sub
 
+    Private Sub TxtboxNombre_TextChanged(sender As Object, e As EventArgs) Handles TxtboxNombre.TextChanged
+
+    End Sub
 End Class

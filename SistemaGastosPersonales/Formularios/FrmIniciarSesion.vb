@@ -80,4 +80,7 @@ Public Class FrmIniciarSesion
         End If
     End Sub
 
+    Private Sub TxtboxUserSesion_TextChanged(sender As Object, e As EventArgs) Handles TxtboxUserSesion.TextChanged
+
+    End Sub
 End Class
