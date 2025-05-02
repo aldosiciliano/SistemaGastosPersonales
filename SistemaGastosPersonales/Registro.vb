@@ -102,9 +102,6 @@ Public Class Registro
     End Sub
 
     'VACIAR Y REESTABLECER CAMPOS (estetico) 
-    Private Sub TxtboxApellido_TextChanged(sender As Object, e As EventArgs) Handles TxtboxApellido.TextChanged
-
-    End Sub
     Private Sub TxtboxApellido_Enter(sender As Object, e As EventArgs) Handles TxtboxApellido.Enter
         TxtboxApellido.Clear()
     End Sub
@@ -116,9 +113,7 @@ Public Class Registro
         End If
     End Sub
 
-    Private Sub TxtboxNombre_TextChanged(sender As Object, e As EventArgs) Handles TxtboxNombre.TextChanged
 
-    End Sub
 
     Private Sub TxtboxNombre_Enter(sender As Object, e As EventArgs) Handles TxtboxNombre.Enter
         TxtboxNombre.Clear()

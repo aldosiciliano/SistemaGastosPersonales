@@ -38,6 +38,7 @@ Public Class FrmIniciarSesion
                         MessageBox.Show("Contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Else
                         Dim interfazPrincipal As New InterfazPrincipal()
+                        interfazPrincipal.UsuarioActual = Usuario
                         interfazPrincipal.Show()
                     End If
                 End Using
