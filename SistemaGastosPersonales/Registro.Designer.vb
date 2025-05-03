@@ -31,6 +31,7 @@ Partial Class Registro
         Me.TxtboxDNI = New Guna.UI2.WinForms.Guna2TextBox()
         Me.TxtboxEmail = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.btnMostrarContra = New Guna.UI2.WinForms.Guna2CircleButton()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -186,12 +187,30 @@ Partial Class Registro
         Me.Guna2PictureBox1.TabIndex = 3
         Me.Guna2PictureBox1.TabStop = False
         '
+        'btnMostrarContra
+        '
+        Me.btnMostrarContra.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnMostrarContra.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnMostrarContra.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnMostrarContra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnMostrarContra.FillColor = System.Drawing.Color.White
+        Me.btnMostrarContra.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnMostrarContra.ForeColor = System.Drawing.Color.White
+        Me.btnMostrarContra.Image = Global.SistemaGastosPersonales.My.Resources.Resources.ver
+        Me.btnMostrarContra.ImageSize = New System.Drawing.Size(24, 24)
+        Me.btnMostrarContra.Location = New System.Drawing.Point(275, 372)
+        Me.btnMostrarContra.Name = "btnMostrarContra"
+        Me.btnMostrarContra.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnMostrarContra.Size = New System.Drawing.Size(23, 24)
+        Me.btnMostrarContra.TabIndex = 8
+        '
         'Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(418, 521)
+        Me.Controls.Add(Me.btnMostrarContra)
         Me.Controls.Add(Me.TxtboxEmail)
         Me.Controls.Add(Me.TxtboxDNI)
         Me.Controls.Add(Me.TxtboxApellido)
@@ -219,4 +238,5 @@ Partial Class Registro
     Friend WithEvents TxtboxApellido As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents TxtboxDNI As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents TxtboxEmail As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btnMostrarContra As Guna.UI2.WinForms.Guna2CircleButton
 End Class

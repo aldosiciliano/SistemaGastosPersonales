@@ -7,7 +7,7 @@ Public Class InterfazPrincipal
         cbxTipo.Items.Add("Ingreso")
         cbxTipo.Items.Add("Gasto")
         CargarMovimientos()
-        'CalcularMontoDisponible()
+        CalcularMontoDisponible()
         'Cargar el nombre de la persona de la bd
         Dim nombrePersona As String = ""
         Dim query As String = "SELECT Nombre FROM Perfil WHERE UsuarioId = (SELECT IdUsuario FROM Usuarios WHERE Usuario = @Usuario)

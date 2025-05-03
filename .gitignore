@@ -1,0 +1,7 @@
+SistemaGastosPersonales/bin/
+SistemaGastosPersonales/obj/
+.vs/
+*.exe
+*.pdb
+*.cache
+*.db

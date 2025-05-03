@@ -25,7 +25,9 @@ Partial Class FrmIniciarSesion
         Me.BtnIniciarSesion = New Guna.UI2.WinForms.Guna2Button()
         Me.TxtBoxPassIniciar = New Guna.UI2.WinForms.Guna2TextBox()
         Me.TxtboxUserSesion = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btnMostrarContra = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.lbVolverReg = New System.Windows.Forms.LinkLabel()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -38,7 +40,7 @@ Partial Class FrmIniciarSesion
         Me.BtnIniciarSesion.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.BtnIniciarSesion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnIniciarSesion.ForeColor = System.Drawing.Color.White
-        Me.BtnIniciarSesion.Location = New System.Drawing.Point(117, 302)
+        Me.BtnIniciarSesion.Location = New System.Drawing.Point(117, 327)
         Me.BtnIniciarSesion.Name = "BtnIniciarSesion"
         Me.BtnIniciarSesion.Size = New System.Drawing.Size(180, 45)
         Me.BtnIniciarSesion.TabIndex = 0
@@ -57,7 +59,7 @@ Partial Class FrmIniciarSesion
         Me.TxtBoxPassIniciar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtBoxPassIniciar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.TxtBoxPassIniciar.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtBoxPassIniciar.Location = New System.Drawing.Point(106, 243)
+        Me.TxtBoxPassIniciar.Location = New System.Drawing.Point(106, 268)
         Me.TxtBoxPassIniciar.Name = "TxtBoxPassIniciar"
         Me.TxtBoxPassIniciar.PlaceholderText = ""
         Me.TxtBoxPassIniciar.SelectedText = ""
@@ -77,12 +79,29 @@ Partial Class FrmIniciarSesion
         Me.TxtboxUserSesion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TxtboxUserSesion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.TxtboxUserSesion.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TxtboxUserSesion.Location = New System.Drawing.Point(106, 185)
+        Me.TxtboxUserSesion.Location = New System.Drawing.Point(106, 210)
         Me.TxtboxUserSesion.Name = "TxtboxUserSesion"
         Me.TxtboxUserSesion.PlaceholderText = ""
         Me.TxtboxUserSesion.SelectedText = ""
         Me.TxtboxUserSesion.Size = New System.Drawing.Size(200, 36)
         Me.TxtboxUserSesion.TabIndex = 1
+        '
+        'btnMostrarContra
+        '
+        Me.btnMostrarContra.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnMostrarContra.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnMostrarContra.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnMostrarContra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnMostrarContra.FillColor = System.Drawing.Color.White
+        Me.btnMostrarContra.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnMostrarContra.ForeColor = System.Drawing.Color.White
+        Me.btnMostrarContra.Image = Global.SistemaGastosPersonales.My.Resources.Resources.ver
+        Me.btnMostrarContra.ImageSize = New System.Drawing.Size(24, 24)
+        Me.btnMostrarContra.Location = New System.Drawing.Point(274, 273)
+        Me.btnMostrarContra.Name = "btnMostrarContra"
+        Me.btnMostrarContra.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btnMostrarContra.Size = New System.Drawing.Size(23, 24)
+        Me.btnMostrarContra.TabIndex = 6
         '
         'Guna2PictureBox1
         '
@@ -95,12 +114,25 @@ Partial Class FrmIniciarSesion
         Me.Guna2PictureBox1.TabIndex = 4
         Me.Guna2PictureBox1.TabStop = False
         '
+        'lbVolverReg
+        '
+        Me.lbVolverReg.AutoSize = True
+        Me.lbVolverReg.LinkColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.lbVolverReg.Location = New System.Drawing.Point(175, 381)
+        Me.lbVolverReg.Name = "lbVolverReg"
+        Me.lbVolverReg.Size = New System.Drawing.Size(60, 13)
+        Me.lbVolverReg.TabIndex = 7
+        Me.lbVolverReg.TabStop = True
+        Me.lbVolverReg.Text = "Registrarse"
+        '
         'FrmIniciarSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(413, 465)
+        Me.ClientSize = New System.Drawing.Size(418, 521)
+        Me.Controls.Add(Me.lbVolverReg)
+        Me.Controls.Add(Me.btnMostrarContra)
         Me.Controls.Add(Me.TxtboxUserSesion)
         Me.Controls.Add(Me.TxtBoxPassIniciar)
         Me.Controls.Add(Me.BtnIniciarSesion)
@@ -109,6 +141,7 @@ Partial Class FrmIniciarSesion
         Me.Text = "Iniciar sesion"
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -116,4 +149,6 @@ Partial Class FrmIniciarSesion
     Friend WithEvents TxtBoxPassIniciar As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents TxtboxUserSesion As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents btnMostrarContra As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents lbVolverReg As LinkLabel
 End Class

@@ -83,4 +83,19 @@ Public Class FrmIniciarSesion
     Private Sub TxtboxUserSesion_TextChanged(sender As Object, e As EventArgs) Handles TxtboxUserSesion.TextChanged
 
     End Sub
+
+    Private Sub btnMostrarContra_Click(sender As Object, e As EventArgs) Handles btnMostrarContra.Click
+        If TxtBoxPassIniciar.PasswordChar = "*" Then
+            TxtBoxPassIniciar.PasswordChar = ""
+            btnMostrarContra.Image = My.Resources.cerrar_ojo
+        Else
+            TxtBoxPassIniciar.PasswordChar = "*"
+            btnMostrarContra.Image = My.Resources.ver
+        End If
+    End Sub
+
+    Private Sub lbVolverReg_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbVolverReg.LinkClicked
+        Registro.Show()
+        Me.Hide()
+    End Sub
 End Class

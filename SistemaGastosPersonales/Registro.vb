@@ -168,7 +168,14 @@ Public Class Registro
         End If
     End Sub
 
-    Private Sub TxtboxNombre_TextChanged(sender As Object, e As EventArgs) Handles TxtboxNombre.TextChanged
 
+    Private Sub btnMostrarContra_Click(sender As Object, e As EventArgs) Handles btnMostrarContra.Click
+        If TxtBoxPassword.PasswordChar = "*" Then
+            TxtBoxPassword.PasswordChar = ""
+            btnMostrarContra.Image = My.Resources.cerrar_ojo
+        Else
+            TxtBoxPassword.PasswordChar = "*"
+            btnMostrarContra.Image = My.Resources.ver
+        End If
     End Sub
 End Class

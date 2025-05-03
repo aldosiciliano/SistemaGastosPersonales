@@ -30,18 +30,19 @@ Partial Class InterfazPrincipal
         Me.cbxCategoria = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.DateTimePicker = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.DataGridViewHistorial = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.ColumnFecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnMonto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LabelMonto = New System.Windows.Forms.Label()
         Me.txtMonto = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnAñadir = New Guna.UI2.WinForms.Guna2Button()
         Me.txtBuscar = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2TabControl1 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.txtDescripcion = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Perfil = New System.Windows.Forms.TabPage()
-        Me.btnEditarPerfil = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnGuardarPerfil = New Guna.UI2.WinForms.Guna2Button()
         Me.PerfilUserLabel = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btnCorreo = New Guna.UI2.WinForms.Guna2TextBox()
@@ -51,18 +52,17 @@ Partial Class InterfazPrincipal
         Me.btnDNI = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnApellido = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnNombre = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.btnEditarPerfil = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnGuardarPerfil = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.ColumnFecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColumnTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColumnCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColumnMonto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridViewHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.Perfil.SuspendLayout()
         CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Perfil.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -115,14 +115,14 @@ Partial Class InterfazPrincipal
         '
         'DataGridViewHistorial
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
         Me.DataGridViewHistorial.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(159, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewHistorial.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
@@ -132,27 +132,27 @@ Partial Class InterfazPrincipal
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightBlue
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridViewHistorial.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewHistorial.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DataGridViewHistorial.Location = New System.Drawing.Point(75, 322)
         Me.DataGridViewHistorial.Name = "DataGridViewHistorial"
         Me.DataGridViewHistorial.RowHeadersVisible = False
-        Me.DataGridViewHistorial.Size = New System.Drawing.Size(706, 247)
+        Me.DataGridViewHistorial.Size = New System.Drawing.Size(706, 304)
         Me.DataGridViewHistorial.TabIndex = 2
         Me.DataGridViewHistorial.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DataGridViewHistorial.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.DataGridViewHistorial.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DataGridViewHistorial.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black
         Me.DataGridViewHistorial.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
         Me.DataGridViewHistorial.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
         Me.DataGridViewHistorial.ThemeStyle.BackColor = System.Drawing.Color.White
         Me.DataGridViewHistorial.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DataGridViewHistorial.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DataGridViewHistorial.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.DataGridViewHistorial.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewHistorial.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DataGridViewHistorial.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.DataGridViewHistorial.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DataGridViewHistorial.ThemeStyle.HeaderStyle.Height = 30
@@ -164,6 +164,31 @@ Partial Class InterfazPrincipal
         Me.DataGridViewHistorial.ThemeStyle.RowsStyle.Height = 22
         Me.DataGridViewHistorial.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DataGridViewHistorial.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'ColumnFecha
+        '
+        Me.ColumnFecha.HeaderText = "Fecha"
+        Me.ColumnFecha.Name = "ColumnFecha"
+        '
+        'ColumnTipo
+        '
+        Me.ColumnTipo.HeaderText = "Tipo"
+        Me.ColumnTipo.Name = "ColumnTipo"
+        '
+        'ColumnCategoria
+        '
+        Me.ColumnCategoria.HeaderText = "Categoria"
+        Me.ColumnCategoria.Name = "ColumnCategoria"
+        '
+        'ColumnMonto
+        '
+        Me.ColumnMonto.HeaderText = "Monto"
+        Me.ColumnMonto.Name = "ColumnMonto"
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripcion"
+        Me.Descripcion.Name = "Descripcion"
         '
         'LabelMonto
         '
@@ -202,7 +227,7 @@ Partial Class InterfazPrincipal
         Me.btnAñadir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnAñadir.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnAñadir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnAñadir.FillColor = System.Drawing.Color.DodgerBlue
+        Me.btnAñadir.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.btnAñadir.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAñadir.ForeColor = System.Drawing.Color.White
         Me.btnAñadir.Location = New System.Drawing.Point(687, 196)
@@ -280,19 +305,6 @@ Partial Class InterfazPrincipal
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Gastos Personales "
         '
-        'Guna2PictureBox3
-        '
-        Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox3.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox3.Image = Global.SistemaGastosPersonales.My.Resources.Resources.lupa__1_
-        Me.Guna2PictureBox3.ImageRotate = 0!
-        Me.Guna2PictureBox3.Location = New System.Drawing.Point(541, 280)
-        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
-        Me.Guna2PictureBox3.Size = New System.Drawing.Size(34, 36)
-        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.Guna2PictureBox3.TabIndex = 9
-        Me.Guna2PictureBox3.TabStop = False
-        '
         'txtDescripcion
         '
         Me.txtDescripcion.BorderRadius = 10
@@ -311,17 +323,6 @@ Partial Class InterfazPrincipal
         Me.txtDescripcion.SelectedText = ""
         Me.txtDescripcion.Size = New System.Drawing.Size(200, 36)
         Me.txtDescripcion.TabIndex = 5
-        '
-        'Guna2PictureBox2
-        '
-        Me.Guna2PictureBox2.Image = Global.SistemaGastosPersonales.My.Resources.Resources.Billetera1
-        Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(0, -4)
-        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(200, 149)
-        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox2.TabIndex = 8
-        Me.Guna2PictureBox2.TabStop = False
         '
         'Perfil
         '
@@ -344,40 +345,6 @@ Partial Class InterfazPrincipal
         Me.Perfil.TabIndex = 1
         Me.Perfil.Text = "Perfil"
         Me.Perfil.UseVisualStyleBackColor = True
-        '
-        'btnEditarPerfil
-        '
-        Me.btnEditarPerfil.BorderRadius = 10
-        Me.btnEditarPerfil.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnEditarPerfil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnEditarPerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnEditarPerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEditarPerfil.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEditarPerfil.ForeColor = System.Drawing.Color.White
-        Me.btnEditarPerfil.Image = Global.SistemaGastosPersonales.My.Resources.Resources.lapiz__1_
-        Me.btnEditarPerfil.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnEditarPerfil.Location = New System.Drawing.Point(548, 496)
-        Me.btnEditarPerfil.Name = "btnEditarPerfil"
-        Me.btnEditarPerfil.Size = New System.Drawing.Size(132, 45)
-        Me.btnEditarPerfil.TabIndex = 11
-        Me.btnEditarPerfil.Text = "Editar"
-        '
-        'btnGuardarPerfil
-        '
-        Me.btnGuardarPerfil.BorderRadius = 10
-        Me.btnGuardarPerfil.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnGuardarPerfil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnGuardarPerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnGuardarPerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnGuardarPerfil.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarPerfil.ForeColor = System.Drawing.Color.White
-        Me.btnGuardarPerfil.Image = Global.SistemaGastosPersonales.My.Resources.Resources.ahorrar
-        Me.btnGuardarPerfil.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnGuardarPerfil.Location = New System.Drawing.Point(339, 496)
-        Me.btnGuardarPerfil.Name = "btnGuardarPerfil"
-        Me.btnGuardarPerfil.Size = New System.Drawing.Size(132, 45)
-        Me.btnGuardarPerfil.TabIndex = 10
-        Me.btnGuardarPerfil.Text = "Guardar"
         '
         'PerfilUserLabel
         '
@@ -505,6 +472,64 @@ Partial Class InterfazPrincipal
         Me.btnNombre.Size = New System.Drawing.Size(259, 55)
         Me.btnNombre.TabIndex = 0
         '
+        'Guna2PictureBox3
+        '
+        Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox3.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox3.Image = Global.SistemaGastosPersonales.My.Resources.Resources.lupa__1_
+        Me.Guna2PictureBox3.ImageRotate = 0!
+        Me.Guna2PictureBox3.Location = New System.Drawing.Point(541, 280)
+        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
+        Me.Guna2PictureBox3.Size = New System.Drawing.Size(34, 36)
+        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.Guna2PictureBox3.TabIndex = 9
+        Me.Guna2PictureBox3.TabStop = False
+        '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.Image = Global.SistemaGastosPersonales.My.Resources.Resources.Billetera1
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(0, -4)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(200, 149)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox2.TabIndex = 8
+        Me.Guna2PictureBox2.TabStop = False
+        '
+        'btnEditarPerfil
+        '
+        Me.btnEditarPerfil.BorderRadius = 10
+        Me.btnEditarPerfil.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEditarPerfil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEditarPerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEditarPerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEditarPerfil.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditarPerfil.ForeColor = System.Drawing.Color.White
+        Me.btnEditarPerfil.Image = Global.SistemaGastosPersonales.My.Resources.Resources.lapiz__1_
+        Me.btnEditarPerfil.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnEditarPerfil.Location = New System.Drawing.Point(548, 496)
+        Me.btnEditarPerfil.Name = "btnEditarPerfil"
+        Me.btnEditarPerfil.Size = New System.Drawing.Size(132, 45)
+        Me.btnEditarPerfil.TabIndex = 11
+        Me.btnEditarPerfil.Text = "Editar"
+        '
+        'btnGuardarPerfil
+        '
+        Me.btnGuardarPerfil.BorderRadius = 10
+        Me.btnGuardarPerfil.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnGuardarPerfil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnGuardarPerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnGuardarPerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnGuardarPerfil.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardarPerfil.ForeColor = System.Drawing.Color.White
+        Me.btnGuardarPerfil.Image = Global.SistemaGastosPersonales.My.Resources.Resources.ahorrar
+        Me.btnGuardarPerfil.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnGuardarPerfil.Location = New System.Drawing.Point(339, 496)
+        Me.btnGuardarPerfil.Name = "btnGuardarPerfil"
+        Me.btnGuardarPerfil.Size = New System.Drawing.Size(132, 45)
+        Me.btnGuardarPerfil.TabIndex = 10
+        Me.btnGuardarPerfil.Text = "Guardar"
+        '
         'Guna2PictureBox1
         '
         Me.Guna2PictureBox1.Image = Global.SistemaGastosPersonales.My.Resources.Resources.usuario__1_
@@ -515,31 +540,6 @@ Partial Class InterfazPrincipal
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox1.TabIndex = 8
         Me.Guna2PictureBox1.TabStop = False
-        '
-        'ColumnFecha
-        '
-        Me.ColumnFecha.HeaderText = "Fecha"
-        Me.ColumnFecha.Name = "ColumnFecha"
-        '
-        'ColumnTipo
-        '
-        Me.ColumnTipo.HeaderText = "Tipo"
-        Me.ColumnTipo.Name = "ColumnTipo"
-        '
-        'ColumnCategoria
-        '
-        Me.ColumnCategoria.HeaderText = "Categoria"
-        Me.ColumnCategoria.Name = "ColumnCategoria"
-        '
-        'ColumnMonto
-        '
-        Me.ColumnMonto.HeaderText = "Monto"
-        Me.ColumnMonto.Name = "ColumnMonto"
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.Name = "Descripcion"
         '
         'InterfazPrincipal
         '
@@ -556,10 +556,10 @@ Partial Class InterfazPrincipal
         Me.Guna2TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Perfil.ResumeLayout(False)
         Me.Perfil.PerformLayout()
+        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
