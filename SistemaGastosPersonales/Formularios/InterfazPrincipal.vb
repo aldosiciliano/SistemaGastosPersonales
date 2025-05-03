@@ -3,9 +3,37 @@
 
 Public Class InterfazPrincipal
     Public Property UsuarioActual As String
+
     Private Sub InterfazPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cbxTipo.Items.Add("Ingreso")
+
+        txtDescripcion.ForeColor = Color.Gray
+        txtDescripcion.Text = "Descripcion"
+
+        txtMonto.ForeColor = Color.Gray
+        txtMonto.Text = "Ingrese monto"
+
+        txtBuscar.Text = "Filtro"
+        txtBuscar.ForeColor = Color.Gray
+
+        cbxTipo.DropDownStyle = ComboBoxStyle.DropDownList
+
+        cbxTipo.Items.Add("Seleccione movimiento")
         cbxTipo.Items.Add("Gasto")
+        cbxTipo.Items.Add("Ingreso")
+
+
+        cbxTipo.SelectedIndex = 0
+        cbxTipo.ForeColor = Color.Gray
+
+        ' Cambiar color al seleccionar una opción real
+        AddHandler cbxTipo.SelectedIndexChanged, Sub()
+                                                     If cbxTipo.SelectedIndex = 0 Then
+                                                         cbxTipo.ForeColor = Color.Gray
+                                                     Else
+                                                         cbxTipo.ForeColor = Color.Black
+                                                     End If
+                                                 End Sub
+
         CargarMovimientos()
         CalcularMontoDisponible()
         'Cargar el nombre de la persona de la bd
@@ -38,6 +66,8 @@ Public Class InterfazPrincipal
             categorias.AddRange(New String() {"Alquiler", "Comida", "Transporte", "Servicios", "Salud"})
         End If
 
+        cbxCategoria.Items.Add("Seleccione una categoría")
+
         For Each categoria In categorias
             cbxCategoria.Items.Add(categoria)
 
@@ -61,6 +91,17 @@ Public Class InterfazPrincipal
                 End Using
             End Using
         Next
+
+        cbxCategoria.SelectedIndex = 0
+        cbxCategoria.ForeColor = Color.Gray
+
+        AddHandler cbxCategoria.SelectedIndexChanged, Sub()
+                                                          If cbxCategoria.SelectedIndex = 0 Then
+                                                              cbxCategoria.ForeColor = Color.Gray
+                                                          Else
+                                                              cbxCategoria.ForeColor = Color.Black
+                                                          End If
+                                                      End Sub
     End Sub
 
     'Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditarPerfil.Click
@@ -186,9 +227,19 @@ Public Class InterfazPrincipal
         CalcularMontoDisponible()
     End Sub
 
+    Private Sub txtBuscar_Enter(sender As Object, e As EventArgs) Handles txtBuscar.Enter
+        If txtBuscar.Text = "Filtro" Then
+            txtBuscar.Text = ""
+            txtBuscar.ForeColor = Color.Black
+        End If
+    End Sub
+
+
     ' Funcion para filtar o buscar en el DataGridView
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         Dim filtro As String = txtBuscar.Text.Trim().ToLower()
+
+        If filtro = "filtro" Then Exit Sub ' Evitar filtrar si está el texto guía
 
         For Each fila As DataGridViewRow In DataGridViewHistorial.Rows
             If fila.IsNewRow Then Continue For
@@ -211,6 +262,14 @@ Public Class InterfazPrincipal
             fila.Visible = visible
         Next
     End Sub
+
+    Private Sub txtBuscar_Leave(sender As Object, e As EventArgs) Handles txtBuscar.Leave
+        If txtBuscar.Text = "" Then
+            txtBuscar.Text = "Filtro"
+            txtBuscar.ForeColor = Color.Gray
+        End If
+    End Sub
+
 
     Private Sub txtMonto_TextChanged(sender As Object, e As EventArgs) Handles txtMonto.TextChanged
 
@@ -239,4 +298,33 @@ Public Class InterfazPrincipal
 
         LabelMonto.Text = "$" & montoDisponible.ToString("N2")
     End Sub
+
+    Private Sub txtMonto_Enter(sender As Object, e As EventArgs) Handles txtMonto.Enter
+        If txtMonto.Text = "Ingrese monto" Then
+            txtMonto.Text = ""
+            txtMonto.ForeColor = Color.Black
+        End If
+    End Sub
+
+    Private Sub txtMonto_Leave(sender As Object, e As EventArgs) Handles txtMonto.Leave
+        If String.IsNullOrWhiteSpace(txtMonto.Text) Then
+            txtMonto.Text = "Ingrese monto"
+            txtMonto.ForeColor = Color.Gray
+        End If
+    End Sub
+
+    Private Sub txtDescripcion_Enter(sender As Object, e As EventArgs) Handles txtDescripcion.Enter
+        If txtDescripcion.Text = "Descripcion" Then
+            txtDescripcion.Text = ""
+            txtDescripcion.ForeColor = Color.Black
+        End If
+    End Sub
+
+    Private Sub txtDescripcion_Leave(sender As Object, e As EventArgs) Handles txtDescripcion.Leave
+        If String.IsNullOrWhiteSpace(txtDescripcion.Text) Then
+            txtDescripcion.Text = "Descripcion"
+            txtDescripcion.ForeColor = Color.Gray
+        End If
+    End Sub
+
 End Class
