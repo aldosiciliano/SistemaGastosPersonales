@@ -359,4 +359,8 @@ Public Class InterfazPrincipal
     Private Sub PerfilUserLabel_Click(sender As Object, e As EventArgs) Handles PerfilUserLabel.Click
 
     End Sub
+
+    Private Sub cbxEntidad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxEntidad.SelectedIndexChanged
+
+    End Sub
 End Class
