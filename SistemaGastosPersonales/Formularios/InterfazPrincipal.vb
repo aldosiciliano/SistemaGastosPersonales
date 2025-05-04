@@ -96,37 +96,37 @@ Public Class InterfazPrincipal
         cbxCategoria.ForeColor = Color.Gray
 
         AddHandler cbxCategoria.SelectedIndexChanged, Sub()
-                                                          If cbxCategoria.SelectedIndex = 0 Then
-                                                              cbxCategoria.ForeColor = Color.Gray
-                                                          Else
-                                                              cbxCategoria.ForeColor = Color.Black
-                                                          End If
-                                                      End Sub
+                                  If cbxCategoria.SelectedIndex = 0 Then
+                                      cbxCategoria.ForeColor = Color.Gray
+                                  Else
+                                      cbxCategoria.ForeColor = Color.Black
+                                  End If
+                              End Sub
     End Sub
 
-    'Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditarPerfil.Click
-    '    Dim query As String = "SELECT Nombre, Apellido, Email, DNI, Correo FROM Perfil WHERE UsuarioId = (SELECT IdUsuario FROM Usuarios WHERE Usuario = @Usuario)"
-    '    Try
-    '        Using conn As SQLiteConnection = Conexion.ObtenerConexion()
-    '            Using cmd As New SQLiteCommand(query, conn)
-    '                cmd.Parameters.AddWithValue("@Usuario", UsuarioActual)
+    Private Sub btneditar_click(sender As Object, e As EventArgs) Handles btnEditarPerfil.Click
+        Dim query As String = "SELECT nombre, apellido, email, dni, email from perfil where usuarioid = (SELECT idusuario from usuarios where usuario = @usuario)"
+        Try
+            Using conn As SQLiteConnection = Conexion.ObtenerConexion()
+                Using cmd As New SQLiteCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@usuario", UsuarioActual)
 
-    '                Using reader As SQLiteDataReader = cmd.ExecuteReader()
-    '                    If reader.Read() Then
-    '                        btnNombre.Text = reader("Nombre").ToString()
-    '                        btnApellido.Text = reader("Apellido").ToString()
-    '                        btnDNI.Text = reader("DNI").ToString()
-    '                        btnCorreo.Text = reader("Email").ToString()
-    '                    Else
-    '                        MessageBox.Show("No se encontró el perfil del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '                    End If
-    '                End Using
-    '            End Using
-    '        End Using
-    '    Catch ex As Exception
-    '        MessageBox.Show($"Error al cargar el perfil: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End Try
-    'End Sub
+                    Using reader As SQLiteDataReader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            btnNombre.Text = reader("nombre").ToString()
+                            btnApellido.Text = reader("apellido").ToString()
+                            btnDNI.Text = reader("dni").ToString()
+                            btnCorreo.Text = reader("email").ToString()
+                        Else
+                            MessageBox.Show("no se encontró el perfil del usuario.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show($"error al cargar el perfil: {ex.Message}", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         Dim tipoSeleccionado As String = cbxTipo.SelectedItem.ToString()
@@ -211,7 +211,7 @@ Public Class InterfazPrincipal
                     Using reader As SQLiteDataReader = cmd.ExecuteReader()
                         While reader.Read()
                             DataGridViewHistorial.Rows.Add(
-                            reader("Fecha"),
+                            Convert.ToDateTime(reader("Fecha")).ToString("dd/MM/yyyy"), 'Formatear fecha
                             reader("Tipo"),
                             reader("Categoria"),
                             reader("Monto"),
@@ -271,10 +271,6 @@ Public Class InterfazPrincipal
     End Sub
 
 
-    Private Sub txtMonto_TextChanged(sender As Object, e As EventArgs) Handles txtMonto.TextChanged
-
-    End Sub
-
     ' Funcion que calcula el monto disponible
     Private Sub CalcularMontoDisponible()
         Dim montoDisponible As Decimal = 0
@@ -326,5 +322,6 @@ Public Class InterfazPrincipal
             txtDescripcion.ForeColor = Color.Gray
         End If
     End Sub
+
 
 End Class
