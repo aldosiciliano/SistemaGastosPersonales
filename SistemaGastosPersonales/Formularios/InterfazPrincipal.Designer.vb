@@ -49,13 +49,13 @@ Partial Class InterfazPrincipal
         Me.btnGuardarPerfil = New Guna.UI2.WinForms.Guna2Button()
         Me.PerfilUserLabel = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.btnCorreo = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtCorreoPerfil = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.btnDNI = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.btnApellido = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.btnNombre = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtDNIPerfil = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtApellidoPerfil = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtNombrePerfil = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         CType(Me.DataGridViewHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2TabControl1.SuspendLayout()
@@ -354,13 +354,13 @@ Partial Class InterfazPrincipal
         Me.Perfil.Controls.Add(Me.btnGuardarPerfil)
         Me.Perfil.Controls.Add(Me.PerfilUserLabel)
         Me.Perfil.Controls.Add(Me.Guna2HtmlLabel4)
-        Me.Perfil.Controls.Add(Me.btnCorreo)
+        Me.Perfil.Controls.Add(Me.txtCorreoPerfil)
         Me.Perfil.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Perfil.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Perfil.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.Perfil.Controls.Add(Me.btnDNI)
-        Me.Perfil.Controls.Add(Me.btnApellido)
-        Me.Perfil.Controls.Add(Me.btnNombre)
+        Me.Perfil.Controls.Add(Me.txtDNIPerfil)
+        Me.Perfil.Controls.Add(Me.txtApellidoPerfil)
+        Me.Perfil.Controls.Add(Me.txtNombrePerfil)
         Me.Perfil.Controls.Add(Me.Guna2PictureBox1)
         Me.Perfil.Location = New System.Drawing.Point(184, 4)
         Me.Perfil.Name = "Perfil"
@@ -424,24 +424,24 @@ Partial Class InterfazPrincipal
         Me.Guna2HtmlLabel4.TabIndex = 7
         Me.Guna2HtmlLabel4.Text = "Correo"
         '
-        'btnCorreo
+        'txtCorreoPerfil
         '
-        Me.btnCorreo.BorderRadius = 10
-        Me.btnCorreo.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.btnCorreo.DefaultText = ""
-        Me.btnCorreo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.btnCorreo.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.btnCorreo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnCorreo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnCorreo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnCorreo.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnCorreo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnCorreo.Location = New System.Drawing.Point(375, 403)
-        Me.btnCorreo.Name = "btnCorreo"
-        Me.btnCorreo.PlaceholderText = ""
-        Me.btnCorreo.SelectedText = ""
-        Me.btnCorreo.Size = New System.Drawing.Size(259, 55)
-        Me.btnCorreo.TabIndex = 6
+        Me.txtCorreoPerfil.BorderRadius = 10
+        Me.txtCorreoPerfil.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtCorreoPerfil.DefaultText = ""
+        Me.txtCorreoPerfil.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtCorreoPerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtCorreoPerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCorreoPerfil.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtCorreoPerfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCorreoPerfil.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtCorreoPerfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtCorreoPerfil.Location = New System.Drawing.Point(375, 403)
+        Me.txtCorreoPerfil.Name = "txtCorreoPerfil"
+        Me.txtCorreoPerfil.PlaceholderText = ""
+        Me.txtCorreoPerfil.SelectedText = ""
+        Me.txtCorreoPerfil.Size = New System.Drawing.Size(259, 55)
+        Me.txtCorreoPerfil.TabIndex = 6
         '
         'Guna2HtmlLabel3
         '
@@ -473,62 +473,62 @@ Partial Class InterfazPrincipal
         Me.Guna2HtmlLabel1.TabIndex = 3
         Me.Guna2HtmlLabel1.Text = "Nombre"
         '
-        'btnDNI
+        'txtDNIPerfil
         '
-        Me.btnDNI.BorderRadius = 10
-        Me.btnDNI.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.btnDNI.DefaultText = ""
-        Me.btnDNI.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.btnDNI.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.btnDNI.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnDNI.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnDNI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnDNI.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnDNI.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnDNI.Location = New System.Drawing.Point(375, 342)
-        Me.btnDNI.Name = "btnDNI"
-        Me.btnDNI.PlaceholderText = ""
-        Me.btnDNI.SelectedText = ""
-        Me.btnDNI.Size = New System.Drawing.Size(259, 55)
-        Me.btnDNI.TabIndex = 2
+        Me.txtDNIPerfil.BorderRadius = 10
+        Me.txtDNIPerfil.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDNIPerfil.DefaultText = ""
+        Me.txtDNIPerfil.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtDNIPerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtDNIPerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDNIPerfil.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDNIPerfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDNIPerfil.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtDNIPerfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDNIPerfil.Location = New System.Drawing.Point(375, 342)
+        Me.txtDNIPerfil.Name = "txtDNIPerfil"
+        Me.txtDNIPerfil.PlaceholderText = ""
+        Me.txtDNIPerfil.SelectedText = ""
+        Me.txtDNIPerfil.Size = New System.Drawing.Size(259, 55)
+        Me.txtDNIPerfil.TabIndex = 2
         '
-        'btnApellido
+        'txtApellidoPerfil
         '
-        Me.btnApellido.BorderRadius = 10
-        Me.btnApellido.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.btnApellido.DefaultText = ""
-        Me.btnApellido.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.btnApellido.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.btnApellido.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnApellido.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnApellido.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnApellido.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnApellido.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnApellido.Location = New System.Drawing.Point(375, 281)
-        Me.btnApellido.Name = "btnApellido"
-        Me.btnApellido.PlaceholderText = ""
-        Me.btnApellido.SelectedText = ""
-        Me.btnApellido.Size = New System.Drawing.Size(259, 55)
-        Me.btnApellido.TabIndex = 1
+        Me.txtApellidoPerfil.BorderRadius = 10
+        Me.txtApellidoPerfil.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtApellidoPerfil.DefaultText = ""
+        Me.txtApellidoPerfil.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtApellidoPerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtApellidoPerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtApellidoPerfil.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtApellidoPerfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtApellidoPerfil.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtApellidoPerfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtApellidoPerfil.Location = New System.Drawing.Point(375, 281)
+        Me.txtApellidoPerfil.Name = "txtApellidoPerfil"
+        Me.txtApellidoPerfil.PlaceholderText = ""
+        Me.txtApellidoPerfil.SelectedText = ""
+        Me.txtApellidoPerfil.Size = New System.Drawing.Size(259, 55)
+        Me.txtApellidoPerfil.TabIndex = 1
         '
-        'btnNombre
+        'txtNombrePerfil
         '
-        Me.btnNombre.BorderRadius = 10
-        Me.btnNombre.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.btnNombre.DefaultText = ""
-        Me.btnNombre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.btnNombre.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.btnNombre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnNombre.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnNombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnNombre.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnNombre.Location = New System.Drawing.Point(375, 220)
-        Me.btnNombre.Name = "btnNombre"
-        Me.btnNombre.PlaceholderText = ""
-        Me.btnNombre.SelectedText = ""
-        Me.btnNombre.Size = New System.Drawing.Size(259, 55)
-        Me.btnNombre.TabIndex = 0
+        Me.txtNombrePerfil.BorderRadius = 10
+        Me.txtNombrePerfil.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtNombrePerfil.DefaultText = ""
+        Me.txtNombrePerfil.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtNombrePerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtNombrePerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtNombrePerfil.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtNombrePerfil.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtNombrePerfil.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtNombrePerfil.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtNombrePerfil.Location = New System.Drawing.Point(375, 220)
+        Me.txtNombrePerfil.Name = "txtNombrePerfil"
+        Me.txtNombrePerfil.PlaceholderText = ""
+        Me.txtNombrePerfil.SelectedText = ""
+        Me.txtNombrePerfil.Size = New System.Drawing.Size(259, 55)
+        Me.txtNombrePerfil.TabIndex = 0
         '
         'Guna2PictureBox1
         '
@@ -579,10 +579,10 @@ Partial Class InterfazPrincipal
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents btnDNI As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents btnApellido As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents btnNombre As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents btnCorreo As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtDNIPerfil As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtApellidoPerfil As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtNombrePerfil As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtCorreoPerfil As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents btnEditarPerfil As Guna.UI2.WinForms.Guna2Button

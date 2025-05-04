@@ -104,8 +104,8 @@ Public Class InterfazPrincipal
                               End Sub
     End Sub
 
-    Private Sub btneditar_click(sender As Object, e As EventArgs) Handles btnEditarPerfil.Click
-        Dim query As String = "SELECT nombre, apellido, email, dni, email from perfil where usuarioid = (SELECT idusuario from usuarios where usuario = @usuario)"
+    Private Sub btnEditar_click(sender As Object, e As EventArgs) Handles btnEditarPerfil.Click
+        Dim query As String = "SELECT nombre, apellido, dni, email from perfil where usuarioid = (SELECT idusuario from usuarios where usuario = @usuario)"
         Try
             Using conn As SQLiteConnection = Conexion.ObtenerConexion()
                 Using cmd As New SQLiteCommand(query, conn)
@@ -113,10 +113,10 @@ Public Class InterfazPrincipal
 
                     Using reader As SQLiteDataReader = cmd.ExecuteReader()
                         If reader.Read() Then
-                            btnNombre.Text = reader("nombre").ToString()
-                            btnApellido.Text = reader("apellido").ToString()
-                            btnDNI.Text = reader("dni").ToString()
-                            btnCorreo.Text = reader("email").ToString()
+                            txtNombrePerfil.Text = reader("nombre").ToString()
+                            txtApellidoPerfil.Text = reader("apellido").ToString()
+                            txtDNIPerfil.Text = reader("dni").ToString()
+                            txtCorreoPerfil.Text = reader("email").ToString()
                         Else
                             MessageBox.Show("no se encontró el perfil del usuario.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
@@ -127,6 +127,39 @@ Public Class InterfazPrincipal
             MessageBox.Show($"error al cargar el perfil: {ex.Message}", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub btnGuardarPerfil_Click(sender As Object, e As EventArgs) Handles btnGuardarPerfil.Click
+        Dim query As String = "UPDATE perfil 
+                           SET nombre = @nombre, 
+                               apellido = @apellido, 
+                               dni = @dni, 
+                               email = @correo 
+                           WHERE usuarioid = (SELECT idusuario FROM usuarios WHERE usuario = @usuario)"
+
+        Try
+            Using conn As SQLiteConnection = Conexion.ObtenerConexion()
+                Using cmd As New SQLiteCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@nombre", txtNombrePerfil.Text)
+                    cmd.Parameters.AddWithValue("@apellido", txtApellidoPerfil.Text)
+                    cmd.Parameters.AddWithValue("@dni", txtDNIPerfil.Text)
+                    cmd.Parameters.AddWithValue("@correo", txtCorreoPerfil.Text)
+                    cmd.Parameters.AddWithValue("@usuario", UsuarioActual)
+
+                    Dim filasAfectadas As Integer = cmd.ExecuteNonQuery()
+
+                    If filasAfectadas > 0 Then
+                        MessageBox.Show("Perfil actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("No se encontró el perfil del usuario para actualizar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show($"Error al actualizar el perfil: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         Dim tipoSeleccionado As String = cbxTipo.SelectedItem.ToString()
@@ -323,5 +356,7 @@ Public Class InterfazPrincipal
         End If
     End Sub
 
+    Private Sub PerfilUserLabel_Click(sender As Object, e As EventArgs) Handles PerfilUserLabel.Click
 
+    End Sub
 End Class
