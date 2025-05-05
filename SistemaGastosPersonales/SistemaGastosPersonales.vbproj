@@ -205,6 +205,9 @@
   <ItemGroup>
     <None Include="Resources\cerrar_ojo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton-eliminar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

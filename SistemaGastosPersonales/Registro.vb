@@ -67,7 +67,9 @@ Public Class Registro
         Catch ex As Exception
             MessageBox.Show($"Ocurrió un error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
+        'Cierra ventana registro y abre iniciar sesion
+        FrmIniciarSesion.Show()
+        Me.Hide()
     End Sub
 
     'Private Sub LinkIniciarSesion_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkIniciarSesion.LinkClicked

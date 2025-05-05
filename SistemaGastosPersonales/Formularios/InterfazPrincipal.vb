@@ -36,10 +36,10 @@ Public Class InterfazPrincipal
 
         CargarMovimientos()
         CalcularMontoDisponible()
+        CalcularMonto()
         'Cargar el nombre de la persona de la bd
         Dim nombrePersona As String = ""
-        Dim query As String = "SELECT Nombre FROM Perfil WHERE UsuarioId = (SELECT IdUsuario FROM Usuarios WHERE Usuario = @Usuario)
-"
+        Dim query As String = "SELECT Nombre FROM Perfil WHERE UsuarioId = (SELECT IdUsuario FROM Usuarios WHERE Usuario = @Usuario)"
         Try
             Using conn As SQLiteConnection = Conexion.ObtenerConexion()
                 Using cmd As New SQLiteCommand(query, conn)
@@ -54,6 +54,33 @@ Public Class InterfazPrincipal
         Catch ex As Exception
             MessageBox.Show($"Error al cargar el nombre: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+        ' Cargar el perfil del usuario
+        Dim query1 As String = "SELECT nombre, apellido, dni, email from perfil where usuarioid = (SELECT idusuario from usuarios where usuario = @usuario)"
+        Try
+            Using conn As SQLiteConnection = Conexion.ObtenerConexion()
+                Using cmd As New SQLiteCommand(query1, conn)
+                    cmd.Parameters.AddWithValue("@usuario", UsuarioActual)
+
+                    Using reader As SQLiteDataReader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            txtNombrePerfil.Text = reader("nombre").ToString()
+                            txtApellidoPerfil.Text = reader("apellido").ToString()
+                            txtDNIPerfil.Text = reader("dni").ToString()
+                            txtCorreoPerfil.Text = reader("email").ToString()
+                        Else
+                            MessageBox.Show("no se encontró el perfil del usuario.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show($"error al cargar el perfil: {ex.Message}", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        txtNombrePerfil.SelectionStart = txtNombrePerfil.Text.Length
+        txtApellidoPerfil.SelectionStart = txtApellidoPerfil.Text.Length
+        txtDNIPerfil.SelectionStart = txtDNIPerfil.Text.Length
+        txtCorreoPerfil.SelectionStart = txtCorreoPerfil.Text.Length
     End Sub
 
     Private Sub cbxTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxTipo.SelectedIndexChanged
@@ -96,36 +123,24 @@ Public Class InterfazPrincipal
         cbxCategoria.ForeColor = Color.Gray
 
         AddHandler cbxCategoria.SelectedIndexChanged, Sub()
-                                  If cbxCategoria.SelectedIndex = 0 Then
-                                      cbxCategoria.ForeColor = Color.Gray
-                                  Else
-                                      cbxCategoria.ForeColor = Color.Black
-                                  End If
-                              End Sub
+                                                          If cbxCategoria.SelectedIndex = 0 Then
+                                                              cbxCategoria.ForeColor = Color.Gray
+                                                          Else
+                                                              cbxCategoria.ForeColor = Color.Black
+                                                          End If
+                                                      End Sub
     End Sub
 
-    Private Sub btnEditar_click(sender As Object, e As EventArgs) Handles btnEditarPerfil.Click
-        Dim query As String = "SELECT nombre, apellido, dni, email from perfil where usuarioid = (SELECT idusuario from usuarios where usuario = @usuario)"
-        Try
-            Using conn As SQLiteConnection = Conexion.ObtenerConexion()
-                Using cmd As New SQLiteCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@usuario", UsuarioActual)
 
-                    Using reader As SQLiteDataReader = cmd.ExecuteReader()
-                        If reader.Read() Then
-                            txtNombrePerfil.Text = reader("nombre").ToString()
-                            txtApellidoPerfil.Text = reader("apellido").ToString()
-                            txtDNIPerfil.Text = reader("dni").ToString()
-                            txtCorreoPerfil.Text = reader("email").ToString()
-                        Else
-                            MessageBox.Show("no se encontró el perfil del usuario.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        End If
-                    End Using
-                End Using
-            End Using
-        Catch ex As Exception
-            MessageBox.Show($"error al cargar el perfil: {ex.Message}", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+
+    Private Sub btnEditar_click(sender As Object, e As EventArgs) Handles btnEditarPerfil.Click
+        txtNombrePerfil.Enabled = True
+        txtApellidoPerfil.Enabled = True
+        txtDNIPerfil.Enabled = True
+        txtCorreoPerfil.Enabled = True
+        btnGuardarPerfil.Enabled = True
+        btnCancelar.Enabled = True
+        btnEditarPerfil.Enabled = False
     End Sub
 
     Private Sub btnGuardarPerfil_Click(sender As Object, e As EventArgs) Handles btnGuardarPerfil.Click
@@ -152,21 +167,47 @@ Public Class InterfazPrincipal
                     Else
                         MessageBox.Show("No se encontró el perfil del usuario para actualizar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
+                    PerfilUserLabel.Text = $"Bienvenido, {txtNombrePerfil.Text}"
                 End Using
             End Using
         Catch ex As Exception
             MessageBox.Show($"Error al actualizar el perfil: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+        ' Deshabilitar los campos de texto y botones después de guardar
+        btnEditarPerfil.Enabled = True
+        btnGuardarPerfil.Enabled = False
+        btnCancelar.Enabled = False
+        txtNombrePerfil.Enabled = False
+        txtApellidoPerfil.Enabled = False
+        txtDNIPerfil.Enabled = False
+        txtCorreoPerfil.Enabled = False
+
     End Sub
 
 
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
+        If txtMonto.Text = "Ingrese monto" Then
+            MessageBox.Show("Ingrese un monto.", "Campo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
         Dim tipoSeleccionado As String = cbxTipo.SelectedItem.ToString()
         Dim nombreCategoria As String = cbxCategoria.SelectedItem.ToString()
         Dim monto As Decimal = Convert.ToDecimal(txtMonto.Text)
         Dim fechaMovimiento As Date = DateTimePicker.Value
         Dim descripcion As String = txtDescripcion.Text().ToString()
+
+        If cbxTipo.SelectedIndex = 0 Or cbxCategoria.SelectedIndex = 0 Then 'Agregar esto si el medio de pago es obligatorio: Or cbxEntidad.selectedIndex = 0 or cbxMetodo.SelectedIndex = 0 Then
+
+            MessageBox.Show("Campos incompletos, revise su entrada.", "Campo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            Return
+        End If
+
+        If txtDescripcion.Text = "Descripcion" Then
+            MessageBox.Show("Ingrese una descripcion.", "Campo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
 
         Using conn As SQLiteConnection = Conexion.ObtenerConexion()
             Try
@@ -215,6 +256,7 @@ Public Class InterfazPrincipal
                     MessageBox.Show("Movimiento guardado correctamente.")
                     CargarMovimientos()
                     CalcularMontoDisponible()
+                    CalcularMonto()
                 End Using
 
             Catch ex As Exception
@@ -327,6 +369,31 @@ Public Class InterfazPrincipal
 
         LabelMonto.Text = "$" & montoDisponible.ToString("N2")
     End Sub
+    ' Función que calcula el monto de gastos e ingresos
+    Private Sub CalcularMonto()
+        Dim montoGastos As Decimal = 0
+        Dim montoIngresos As Decimal = 0
+
+        For Each fila As DataGridViewRow In DataGridViewHistorial.Rows
+            If Not fila.IsNewRow Then
+                Try
+                    Dim tipo As String = fila.Cells(1).Value.ToString()
+                    Dim monto As Decimal = Convert.ToDecimal(fila.Cells(3).Value)
+
+                    If tipo = "Ingreso" Then
+                        montoIngresos += monto
+                    ElseIf tipo = "Gasto" Then
+                        montoGastos -= monto
+                    End If
+                Catch ex As Exception
+                    ' Si una celda viene vacía o mal formateada, la ignora
+                End Try
+            End If
+        Next
+
+        LabelGastos.Text = "$" & montoGastos.ToString("N2")
+        LabelIngresos.Text = "$" & montoIngresos.ToString("N2")
+    End Sub
 
     Private Sub txtMonto_Enter(sender As Object, e As EventArgs) Handles txtMonto.Enter
         If txtMonto.Text = "Ingrese monto" Then
@@ -356,11 +423,14 @@ Public Class InterfazPrincipal
         End If
     End Sub
 
-    Private Sub PerfilUserLabel_Click(sender As Object, e As EventArgs) Handles PerfilUserLabel.Click
-
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        btnEditarPerfil.Enabled = True
+        btnGuardarPerfil.Enabled = False
+        btnCancelar.Enabled = False
+        txtNombrePerfil.Enabled = False
+        txtApellidoPerfil.Enabled = False
+        txtDNIPerfil.Enabled = False
+        txtCorreoPerfil.Enabled = False
     End Sub
 
-    Private Sub cbxEntidad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxEntidad.SelectedIndexChanged
-
-    End Sub
 End Class
