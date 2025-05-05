@@ -15,6 +15,10 @@ Public Class InterfazPrincipal
         txtBuscar.Text = "Filtro"
         txtBuscar.ForeColor = Color.Gray
 
+        cbxMetodo.ForeColor = Color.Gray
+        cbxMetodo.Text = "Metodo de pago"
+
+
         cbxTipo.DropDownStyle = ComboBoxStyle.DropDownList
 
         cbxTipo.Items.Add("Seleccione movimiento")
@@ -33,10 +37,14 @@ Public Class InterfazPrincipal
                                                          cbxTipo.ForeColor = Color.Black
                                                      End If
                                                  End Sub
-
         CargarMovimientos()
         CalcularMontoDisponible()
         CalcularMonto()
+        ConfigurarComboBoxMetodo()
+        CargarMetodos()
+        CargarComboBoxEntidad()
+        ConfigurarComboBoxEntidad()
+
         'Cargar el nombre de la persona de la bd
         Dim nombrePersona As String = ""
         Dim query As String = "SELECT Nombre FROM Perfil WHERE UsuarioId = (SELECT IdUsuario FROM Usuarios WHERE Usuario = @Usuario)"
@@ -56,18 +64,18 @@ Public Class InterfazPrincipal
         End Try
 
         ' Cargar el perfil del usuario
-        Dim query1 As String = "SELECT nombre, apellido, dni, email from perfil where usuarioid = (SELECT idusuario from usuarios where usuario = @usuario)"
+        Dim query1 As String = "SELECT Nombre, Apellido, DNI, Email FROM Perfil WHERE UsuarioId = (SELECT IdUsuario FROM Usuarios WHERE Usuario = @Usuario)"
         Try
             Using conn As SQLiteConnection = Conexion.ObtenerConexion()
                 Using cmd As New SQLiteCommand(query1, conn)
-                    cmd.Parameters.AddWithValue("@usuario", UsuarioActual)
+                    cmd.Parameters.AddWithValue("@Usuario", UsuarioActual)
 
                     Using reader As SQLiteDataReader = cmd.ExecuteReader()
                         If reader.Read() Then
-                            txtNombrePerfil.Text = reader("nombre").ToString()
-                            txtApellidoPerfil.Text = reader("apellido").ToString()
-                            txtDNIPerfil.Text = reader("dni").ToString()
-                            txtCorreoPerfil.Text = reader("email").ToString()
+                            txtNombrePerfil.Text = reader("Nombre").ToString()
+                            txtApellidoPerfil.Text = reader("Apellido").ToString()
+                            txtDNIPerfil.Text = reader("DNI").ToString()
+                            txtCorreoPerfil.Text = reader("Email").ToString()
                         Else
                             MessageBox.Show("no se encontró el perfil del usuario.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
@@ -81,6 +89,109 @@ Public Class InterfazPrincipal
         txtApellidoPerfil.SelectionStart = txtApellidoPerfil.Text.Length
         txtDNIPerfil.SelectionStart = txtDNIPerfil.Text.Length
         txtCorreoPerfil.SelectionStart = txtCorreoPerfil.Text.Length
+    End Sub
+
+    'Cargar Metodos a bd
+    Private Sub CargarMetodos()
+        Dim metodos As New List(Of String) From {"Seleccione un metodo", "Efectivo", "Tarjeta de credito", "Tarjeta de debito", "Transferencia"}
+        cbxMetodo.Items.Clear()
+        cbxMetodo.Items.AddRange(metodos.ToArray())
+        cbxMetodo.SelectedIndex = 0
+        cbxMetodo.ForeColor = Color.Gray
+        ' Cambiar color al seleccionar una opción real
+        AddHandler cbxMetodo.SelectedIndexChanged, Sub()
+                                                       If cbxMetodo.SelectedIndex = 0 Then
+                                                           cbxMetodo.ForeColor = Color.Gray
+                                                       Else
+                                                           cbxMetodo.ForeColor = Color.Black
+                                                       End If
+                                                   End Sub
+        Dim query As String = "SELECT Entidad FROM Metodo WHERE IdUsuario = (SELECT IdUsuario From Usuarios WHERE Usuario = @Usuario)"
+        Try
+            Using conn As SQLiteConnection = Conexion.ObtenerConexion()
+                Using cmd As New SQLiteCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@Usuario", UsuarioActual)
+                    Using reader As SQLiteDataReader = cmd.ExecuteReader()
+                        While reader.Read()
+                            Dim entidad As String = reader("Entidad").ToString()
+                            If Not cbxEntidad.Items.Contains(entidad) Then
+                                cbxEntidad.Items.Add(entidad)
+                            End If
+                        End While
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show($"Error al cargar entidades: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub ConfigurarComboBoxMetodo()
+        AddHandler cbxMetodo.GotFocus, Sub()
+                                           If cbxMetodo.Text = "Seleccione un método" Then
+                                               cbxMetodo.Text = ""
+                                               cbxMetodo.ForeColor = Color.Black
+                                           End If
+                                       End Sub
+
+        ' Manejar el evento LostFocus para restaurar el marcador de posición si está vacío
+        AddHandler cbxMetodo.LostFocus, Sub()
+                                            If String.IsNullOrWhiteSpace(cbxMetodo.Text) Then
+                                                cbxMetodo.Text = "Seleccione un método"
+                                                cbxMetodo.ForeColor = Color.Gray
+                                            End If
+                                        End Sub
+    End Sub
+
+    Private Sub CargarComboBoxEntidad()
+        cbxEntidad.Items.Clear()
+        Dim entidades As New List(Of String) From {"Seleccione una entidad", "Banco BBVA", "Banco Santander", "Banco Nación", "Otros"}
+        cbxEntidad.Items.AddRange(entidades.ToArray())
+        cbxEntidad.SelectedIndex = 0
+        cbxEntidad.ForeColor = Color.Gray
+
+        AddHandler cbxEntidad.SelectedIndexChanged, Sub()
+                                                        If cbxEntidad.SelectedIndex = 0 Then
+                                                            cbxEntidad.ForeColor = Color.Gray
+                                                        Else
+                                                            cbxEntidad.ForeColor = Color.Black
+                                                        End If
+                                                    End Sub
+
+        Dim query As String = "SELECT Entidad FROM Metodo WHERE IdUsuario = (SELECT IdUsuario From Usuarios WHERE Usuario = @Usuario)"
+        Try
+            Using conn As SQLiteConnection = Conexion.ObtenerConexion()
+                Using cmd As New SQLiteCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@Usuario", UsuarioActual)
+                    Using reader As SQLiteDataReader = cmd.ExecuteReader()
+                        While reader.Read()
+                            Dim entidad As String = reader("Entidad").ToString()
+                            If Not cbxEntidad.Items.Contains(entidad) Then
+                                cbxEntidad.Items.Add(entidad)
+                            End If
+                        End While
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show($"Error al cargar entidades: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+
+    Private Sub ConfigurarComboBoxEntidad()
+        AddHandler cbxEntidad.GotFocus, Sub()
+                                            If cbxEntidad.Text = "Seleccione una entidad" Then
+                                                cbxEntidad.Text = ""
+                                                cbxEntidad.ForeColor = Color.Black
+                                            End If
+                                        End Sub
+        AddHandler cbxEntidad.LostFocus, Sub()
+                                             If String.IsNullOrWhiteSpace(cbxEntidad.Text) Then
+                                                 cbxEntidad.Text = "Seleccione una entidad"
+                                                 cbxEntidad.ForeColor = Color.Gray
+                                             End If
+                                         End Sub
     End Sub
 
     Private Sub cbxTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxTipo.SelectedIndexChanged
@@ -145,11 +256,11 @@ Public Class InterfazPrincipal
 
     Private Sub btnGuardarPerfil_Click(sender As Object, e As EventArgs) Handles btnGuardarPerfil.Click
         Dim query As String = "UPDATE perfil 
-                           SET nombre = @nombre, 
+                               SET nombre = @nombre, 
                                apellido = @apellido, 
                                dni = @dni, 
                                email = @correo 
-                           WHERE usuarioid = (SELECT idusuario FROM usuarios WHERE usuario = @usuario)"
+                               WHERE usuarioid = (SELECT idusuario FROM usuarios WHERE usuario = @usuario)"
 
         Try
             Using conn As SQLiteConnection = Conexion.ObtenerConexion()
@@ -191,23 +302,17 @@ Public Class InterfazPrincipal
             MessageBox.Show("Ingrese un monto.", "Campo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
+
+        If cbxTipo.SelectedIndex = 0 Or cbxCategoria.SelectedIndex = 0 Or cbxMetodo.SelectedIndex = 0 Or cbxEntidad.SelectedIndex = 0 Then
+            MessageBox.Show("Debe seleccionar un tipo, una categoría, un método y una entidad válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
         Dim tipoSeleccionado As String = cbxTipo.SelectedItem.ToString()
         Dim nombreCategoria As String = cbxCategoria.SelectedItem.ToString()
         Dim monto As Decimal = Convert.ToDecimal(txtMonto.Text)
         Dim fechaMovimiento As Date = DateTimePicker.Value
-        Dim descripcion As String = txtDescripcion.Text().ToString()
-
-        If cbxTipo.SelectedIndex = 0 Or cbxCategoria.SelectedIndex = 0 Then 'Agregar esto si el medio de pago es obligatorio: Or cbxEntidad.selectedIndex = 0 or cbxMetodo.SelectedIndex = 0 Then
-
-            MessageBox.Show("Campos incompletos, revise su entrada.", "Campo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-            Return
-        End If
-
-        If txtDescripcion.Text = "Descripcion" Then
-            MessageBox.Show("Ingrese una descripcion.", "Campo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
+        Dim descripcion As String = txtDescripcion.Text.ToString()
 
         Using conn As SQLiteConnection = Conexion.ObtenerConexion()
             Try
@@ -226,7 +331,7 @@ Public Class InterfazPrincipal
                     idUsuario = Convert.ToInt32(resultadoUsuario)
                 End Using
 
-                ' Buscar IdCategoria
+                ' Buscar o insertar la categoría
                 Dim idCategoria As Integer
                 Dim buscarCategoriaQuery As String = "SELECT IdCategoria FROM Categorias WHERE Nombre = @nombre AND Tipo = @tipo"
                 Using buscarCategoriaCmd As New SQLiteCommand(buscarCategoriaQuery, conn)
@@ -236,29 +341,64 @@ Public Class InterfazPrincipal
                     Dim resultadoCategoria = buscarCategoriaCmd.ExecuteScalar()
 
                     If resultadoCategoria Is Nothing Then
-                        MessageBox.Show("La categoría seleccionada no existe en la base de datos.")
-                        Exit Sub
-                    End If
+                        ' Insertar la categoría si no existe
+                        Dim insertarCategoriaQuery As String = "INSERT INTO Categorias (Nombre, Tipo) VALUES (@nombre, @tipo)"
+                        Using insertarCategoriaCmd As New SQLiteCommand(insertarCategoriaQuery, conn)
+                            insertarCategoriaCmd.Parameters.AddWithValue("@nombre", nombreCategoria)
+                            insertarCategoriaCmd.Parameters.AddWithValue("@tipo", tipoSeleccionado)
+                            insertarCategoriaCmd.ExecuteNonQuery()
+                        End Using
 
-                    idCategoria = Convert.ToInt32(resultadoCategoria)
+                        ' Obtener el IdCategoria recién insertado
+                        idCategoria = Convert.ToInt32(conn.LastInsertRowId)
+                    Else
+                        idCategoria = Convert.ToInt32(resultadoCategoria)
+                    End If
+                End Using
+
+                ' Buscar o insertar el método y la entidad
+                Dim idMetodo As Integer
+                Dim buscarMetodoQuery As String = "SELECT IdMetodo FROM Metodo WHERE Origen = @Origen AND Entidad = @Entidad AND IdUsuario = @IdUsuario"
+                Using buscarMetodoCmd As New SQLiteCommand(buscarMetodoQuery, conn)
+                    buscarMetodoCmd.Parameters.AddWithValue("@Origen", cbxMetodo.Text)
+                    buscarMetodoCmd.Parameters.AddWithValue("@Entidad", cbxEntidad.Text)
+                    buscarMetodoCmd.Parameters.AddWithValue("@IdUsuario", idUsuario)
+
+                    Dim resultadoMetodo = buscarMetodoCmd.ExecuteScalar()
+
+                    If resultadoMetodo Is Nothing Then
+                        ' Insertar el método si no existe
+                        Dim insertarMetodoQuery As String = "INSERT INTO Metodo (Origen, Entidad, IdUsuario) VALUES (@Origen, @Entidad, @IdUsuario)"
+                        Using insertarMetodoCmd As New SQLiteCommand(insertarMetodoQuery, conn)
+                            insertarMetodoCmd.Parameters.AddWithValue("@Origen", cbxMetodo.Text)
+                            insertarMetodoCmd.Parameters.AddWithValue("@Entidad", cbxEntidad.Text)
+                            insertarMetodoCmd.Parameters.AddWithValue("@IdUsuario", idUsuario)
+                            insertarMetodoCmd.ExecuteNonQuery()
+                        End Using
+
+                        ' Obtener el IdMetodo recién insertado
+                        idMetodo = Convert.ToInt32(conn.LastInsertRowId)
+                    Else
+                        idMetodo = Convert.ToInt32(resultadoMetodo)
+                    End If
                 End Using
 
                 ' Insertar movimiento
-                Dim insertarQuery As String = "INSERT INTO Movimientos (Fecha, Monto, Tipo, CategoriaId, IdUsuario, Descripcion) VALUES (@fecha, @monto, @tipo, @categoriaId, @idUsuario, @descripcion)"
-                Using insertarCmd As New SQLiteCommand(insertarQuery, conn)
-                    insertarCmd.Parameters.AddWithValue("@fecha", fechaMovimiento)
-                    insertarCmd.Parameters.AddWithValue("@monto", monto)
-                    insertarCmd.Parameters.AddWithValue("@tipo", tipoSeleccionado)
-                    insertarCmd.Parameters.AddWithValue("@categoriaId", idCategoria)
-                    insertarCmd.Parameters.AddWithValue("@idUsuario", idUsuario)
-                    insertarCmd.Parameters.AddWithValue("@descripcion", descripcion)
-                    insertarCmd.ExecuteNonQuery()
+                Dim insertarMovimientoQuery As String = "INSERT INTO Movimientos (Fecha, Monto, Tipo, CategoriaId, IdUsuario, IdMetodo, Descripcion) VALUES (@fecha, @monto, @tipo, @categoriaId, @idUsuario, @idMetodo, @descripcion)"
+                Using insertarMovimientoCmd As New SQLiteCommand(insertarMovimientoQuery, conn)
+                    insertarMovimientoCmd.Parameters.AddWithValue("@fecha", fechaMovimiento)
+                    insertarMovimientoCmd.Parameters.AddWithValue("@monto", monto)
+                    insertarMovimientoCmd.Parameters.AddWithValue("@tipo", tipoSeleccionado)
+                    insertarMovimientoCmd.Parameters.AddWithValue("@categoriaId", idCategoria)
+                    insertarMovimientoCmd.Parameters.AddWithValue("@idUsuario", idUsuario)
+                    insertarMovimientoCmd.Parameters.AddWithValue("@idMetodo", idMetodo)
+                    insertarMovimientoCmd.Parameters.AddWithValue("@descripcion", descripcion)
+                    insertarMovimientoCmd.ExecuteNonQuery()
                     MessageBox.Show("Movimiento guardado correctamente.")
                     CargarMovimientos()
                     CalcularMontoDisponible()
                     CalcularMonto()
                 End Using
-
             Catch ex As Exception
                 MessageBox.Show("Error al guardar: " & ex.Message)
             End Try
@@ -271,11 +411,15 @@ Public Class InterfazPrincipal
         DataGridViewHistorial.Rows.Clear()
 
         Dim query As String = "
-        SELECT M.Fecha, M.Tipo, C.Nombre AS Categoria, M.Monto, M.Descripcion
-        FROM Movimientos M
-        JOIN Categorias C ON M.CategoriaId = C.IdCategoria
-        WHERE M.IdUsuario = (SELECT IdUsuario FROM Usuarios WHERE Usuario = @usuario)
-        ORDER BY M.Fecha DESC
+        SELECT M.Fecha, M.Tipo, C.Nombre AS Categoria, M.Monto, 
+               COALESCE(Me.Origen, 'Sin método') AS Metodo, 
+               COALESCE(Me.Entidad, 'Sin entidad') AS Entidad, 
+               M.Descripcion
+                FROM Movimientos M
+                JOIN Categorias C ON M.CategoriaId = C.IdCategoria
+                LEFT JOIN Metodo Me ON M.IdMetodo = Me.IdMetodo
+                WHERE M.IdUsuario = (SELECT IdUsuario FROM Usuarios WHERE Usuario = @usuario)
+                ORDER BY M.Fecha DESC
     "
 
         Try
@@ -285,12 +429,15 @@ Public Class InterfazPrincipal
 
                     Using reader As SQLiteDataReader = cmd.ExecuteReader()
                         While reader.Read()
+                            ' Asegúrate de que los datos se asignan a las columnas correctas
                             DataGridViewHistorial.Rows.Add(
-                            Convert.ToDateTime(reader("Fecha")).ToString("dd/MM/yyyy"), 'Formatear fecha
-                            reader("Tipo"),
-                            reader("Categoria"),
-                            reader("Monto"),
-                            reader("Descripcion")
+                            Convert.ToDateTime(reader("Fecha")).ToString("dd/MM/yyyy"), ' Fecha
+                            reader("Tipo"), ' Tipo
+                            reader("Categoria"), ' Categoría
+                            reader("Monto"), ' Monto
+                            reader("Metodo"), ' Método
+                            reader("Entidad"), ' Entidad
+                            reader("Descripcion") ' Descripción
                         )
                         End While
                     End Using
@@ -432,5 +579,6 @@ Public Class InterfazPrincipal
         txtDNIPerfil.Enabled = False
         txtCorreoPerfil.Enabled = False
     End Sub
+
 
 End Class

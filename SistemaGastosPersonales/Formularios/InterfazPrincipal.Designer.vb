@@ -44,13 +44,19 @@ Partial Class InterfazPrincipal
         Me.Guna2TabControl1 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cbxEntidad = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.cbxMetodo = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.LabelIngresos = New System.Windows.Forms.Label()
         Me.LabelGastos = New System.Windows.Forms.Label()
         Me.txtDescripcion = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Perfil = New System.Windows.Forms.TabPage()
+        Me.btnEditarPerfil = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnCancelar = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnGuardarPerfil = New Guna.UI2.WinForms.Guna2Button()
         Me.PerfilUserLabel = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txtCorreoPerfil = New Guna.UI2.WinForms.Guna2TextBox()
@@ -60,19 +66,13 @@ Partial Class InterfazPrincipal
         Me.txtDNIPerfil = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtApellidoPerfil = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtNombrePerfil = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.btnEditarPerfil = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnCancelar = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnGuardarPerfil = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DataGridViewHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.Perfil.SuspendLayout()
         CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Perfil.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -148,11 +148,11 @@ Partial Class InterfazPrincipal
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridViewHistorial.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewHistorial.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridViewHistorial.Location = New System.Drawing.Point(75, 335)
+        Me.DataGridViewHistorial.Location = New System.Drawing.Point(47, 335)
         Me.DataGridViewHistorial.Name = "DataGridViewHistorial"
         Me.DataGridViewHistorial.ReadOnly = True
         Me.DataGridViewHistorial.RowHeadersVisible = False
-        Me.DataGridViewHistorial.Size = New System.Drawing.Size(807, 291)
+        Me.DataGridViewHistorial.Size = New System.Drawing.Size(868, 291)
         Me.DataGridViewHistorial.TabIndex = 2
         Me.DataGridViewHistorial.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DataGridViewHistorial.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -276,7 +276,7 @@ Partial Class InterfazPrincipal
         Me.txtBuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBuscar.Location = New System.Drawing.Point(682, 293)
+        Me.txtBuscar.Location = New System.Drawing.Point(715, 293)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.PlaceholderText = ""
         Me.txtBuscar.SelectedText = ""
@@ -350,6 +350,16 @@ Partial Class InterfazPrincipal
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Ingresos"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(262, 87)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(40, 13)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "Monto "
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -388,11 +398,23 @@ Partial Class InterfazPrincipal
         Me.cbxMetodo.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cbxMetodo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbxMetodo.ItemHeight = 30
-        Me.cbxMetodo.Items.AddRange(New Object() {"Efectivo", "Transferencia ", "Tarjeta/Debito"})
         Me.cbxMetodo.Location = New System.Drawing.Point(494, 129)
         Me.cbxMetodo.Name = "cbxMetodo"
         Me.cbxMetodo.Size = New System.Drawing.Size(200, 36)
         Me.cbxMetodo.TabIndex = 10
+        '
+        'Guna2PictureBox3
+        '
+        Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox3.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox3.Image = Global.SistemaGastosPersonales.My.Resources.Resources.lupa__1_
+        Me.Guna2PictureBox3.ImageRotate = 0!
+        Me.Guna2PictureBox3.Location = New System.Drawing.Point(675, 293)
+        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
+        Me.Guna2PictureBox3.Size = New System.Drawing.Size(34, 36)
+        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.Guna2PictureBox3.TabIndex = 9
+        Me.Guna2PictureBox3.TabStop = False
         '
         'LabelIngresos
         '
@@ -435,6 +457,17 @@ Partial Class InterfazPrincipal
         Me.txtDescripcion.Size = New System.Drawing.Size(200, 36)
         Me.txtDescripcion.TabIndex = 5
         '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.Image = Global.SistemaGastosPersonales.My.Resources.Resources.Billetera1
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(0, -4)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(200, 149)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox2.TabIndex = 8
+        Me.Guna2PictureBox2.TabStop = False
+        '
         'Perfil
         '
         Me.Perfil.Controls.Add(Me.btnEditarPerfil)
@@ -457,6 +490,59 @@ Partial Class InterfazPrincipal
         Me.Perfil.TabIndex = 1
         Me.Perfil.Text = "Perfil"
         Me.Perfil.UseVisualStyleBackColor = True
+        '
+        'btnEditarPerfil
+        '
+        Me.btnEditarPerfil.BorderRadius = 10
+        Me.btnEditarPerfil.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEditarPerfil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEditarPerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEditarPerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEditarPerfil.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditarPerfil.ForeColor = System.Drawing.Color.White
+        Me.btnEditarPerfil.Image = Global.SistemaGastosPersonales.My.Resources.Resources.lapiz__1_
+        Me.btnEditarPerfil.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnEditarPerfil.Location = New System.Drawing.Point(430, 496)
+        Me.btnEditarPerfil.Name = "btnEditarPerfil"
+        Me.btnEditarPerfil.Size = New System.Drawing.Size(132, 45)
+        Me.btnEditarPerfil.TabIndex = 11
+        Me.btnEditarPerfil.Text = "Editar"
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.BorderRadius = 10
+        Me.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnCancelar.Enabled = False
+        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelar.ForeColor = System.Drawing.Color.White
+        Me.btnCancelar.Image = Global.SistemaGastosPersonales.My.Resources.Resources.boton_eliminar
+        Me.btnCancelar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnCancelar.Location = New System.Drawing.Point(634, 496)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(132, 45)
+        Me.btnCancelar.TabIndex = 10
+        Me.btnCancelar.Text = "Cancelar"
+        '
+        'btnGuardarPerfil
+        '
+        Me.btnGuardarPerfil.BorderRadius = 10
+        Me.btnGuardarPerfil.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnGuardarPerfil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnGuardarPerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnGuardarPerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnGuardarPerfil.Enabled = False
+        Me.btnGuardarPerfil.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardarPerfil.ForeColor = System.Drawing.Color.White
+        Me.btnGuardarPerfil.Image = Global.SistemaGastosPersonales.My.Resources.Resources.ahorrar
+        Me.btnGuardarPerfil.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnGuardarPerfil.Location = New System.Drawing.Point(220, 496)
+        Me.btnGuardarPerfil.Name = "btnGuardarPerfil"
+        Me.btnGuardarPerfil.Size = New System.Drawing.Size(132, 45)
+        Me.btnGuardarPerfil.TabIndex = 10
+        Me.btnGuardarPerfil.Text = "Guardar"
         '
         'PerfilUserLabel
         '
@@ -588,83 +674,6 @@ Partial Class InterfazPrincipal
         Me.txtNombrePerfil.Size = New System.Drawing.Size(259, 55)
         Me.txtNombrePerfil.TabIndex = 0
         '
-        'Guna2PictureBox3
-        '
-        Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox3.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox3.Image = Global.SistemaGastosPersonales.My.Resources.Resources.lupa__1_
-        Me.Guna2PictureBox3.ImageRotate = 0!
-        Me.Guna2PictureBox3.Location = New System.Drawing.Point(642, 293)
-        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
-        Me.Guna2PictureBox3.Size = New System.Drawing.Size(34, 36)
-        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.Guna2PictureBox3.TabIndex = 9
-        Me.Guna2PictureBox3.TabStop = False
-        '
-        'Guna2PictureBox2
-        '
-        Me.Guna2PictureBox2.Image = Global.SistemaGastosPersonales.My.Resources.Resources.Billetera1
-        Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(0, -4)
-        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(200, 149)
-        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox2.TabIndex = 8
-        Me.Guna2PictureBox2.TabStop = False
-        '
-        'btnEditarPerfil
-        '
-        Me.btnEditarPerfil.BorderRadius = 10
-        Me.btnEditarPerfil.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnEditarPerfil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnEditarPerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnEditarPerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEditarPerfil.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEditarPerfil.ForeColor = System.Drawing.Color.White
-        Me.btnEditarPerfil.Image = Global.SistemaGastosPersonales.My.Resources.Resources.lapiz__1_
-        Me.btnEditarPerfil.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnEditarPerfil.Location = New System.Drawing.Point(430, 496)
-        Me.btnEditarPerfil.Name = "btnEditarPerfil"
-        Me.btnEditarPerfil.Size = New System.Drawing.Size(132, 45)
-        Me.btnEditarPerfil.TabIndex = 11
-        Me.btnEditarPerfil.Text = "Editar"
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.BorderRadius = 10
-        Me.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCancelar.Enabled = False
-        Me.btnCancelar.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelar.ForeColor = System.Drawing.Color.White
-        Me.btnCancelar.Image = Global.SistemaGastosPersonales.My.Resources.Resources.boton_eliminar
-        Me.btnCancelar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnCancelar.Location = New System.Drawing.Point(634, 496)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(132, 45)
-        Me.btnCancelar.TabIndex = 10
-        Me.btnCancelar.Text = "Cancelar"
-        '
-        'btnGuardarPerfil
-        '
-        Me.btnGuardarPerfil.BorderRadius = 10
-        Me.btnGuardarPerfil.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnGuardarPerfil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnGuardarPerfil.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnGuardarPerfil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnGuardarPerfil.Enabled = False
-        Me.btnGuardarPerfil.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarPerfil.ForeColor = System.Drawing.Color.White
-        Me.btnGuardarPerfil.Image = Global.SistemaGastosPersonales.My.Resources.Resources.ahorrar
-        Me.btnGuardarPerfil.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnGuardarPerfil.Location = New System.Drawing.Point(220, 496)
-        Me.btnGuardarPerfil.Name = "btnGuardarPerfil"
-        Me.btnGuardarPerfil.Size = New System.Drawing.Size(132, 45)
-        Me.btnGuardarPerfil.TabIndex = 10
-        Me.btnGuardarPerfil.Text = "Guardar"
-        '
         'Guna2PictureBox1
         '
         Me.Guna2PictureBox1.Image = Global.SistemaGastosPersonales.My.Resources.Resources.usuario__1_
@@ -675,16 +684,6 @@ Partial Class InterfazPrincipal
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox1.TabIndex = 8
         Me.Guna2PictureBox1.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(262, 87)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 13)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Monto "
         '
         'InterfazPrincipal
         '
@@ -701,10 +700,10 @@ Partial Class InterfazPrincipal
         Me.Guna2TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.Perfil.ResumeLayout(False)
-        Me.Perfil.PerformLayout()
         CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Perfil.ResumeLayout(False)
+        Me.Perfil.PerformLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
