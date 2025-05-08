@@ -67,6 +67,8 @@ Partial Class InterfazPrincipal
         Me.txtApellidoPerfil = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtNombrePerfil = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.btnModificar = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEliminar = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.DataGridViewHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -240,7 +242,7 @@ Partial Class InterfazPrincipal
         Me.txtMonto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtMonto.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtMonto.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMonto.Location = New System.Drawing.Point(265, 207)
+        Me.txtMonto.Location = New System.Drawing.Point(268, 207)
         Me.txtMonto.Name = "txtMonto"
         Me.txtMonto.PlaceholderText = ""
         Me.txtMonto.SelectedText = ""
@@ -258,7 +260,7 @@ Partial Class InterfazPrincipal
         Me.btnAñadir.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.btnAñadir.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAñadir.ForeColor = System.Drawing.Color.White
-        Me.btnAñadir.Location = New System.Drawing.Point(763, 207)
+        Me.btnAñadir.Location = New System.Drawing.Point(701, 207)
         Me.btnAñadir.Name = "btnAñadir"
         Me.btnAñadir.Size = New System.Drawing.Size(94, 47)
         Me.btnAñadir.TabIndex = 6
@@ -315,6 +317,8 @@ Partial Class InterfazPrincipal
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.White
+        Me.TabPage1.Controls.Add(Me.btnEliminar)
+        Me.TabPage1.Controls.Add(Me.btnModificar)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.Label5)
@@ -450,7 +454,7 @@ Partial Class InterfazPrincipal
         Me.txtDescripcion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtDescripcion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtDescripcion.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtDescripcion.Location = New System.Drawing.Point(379, 207)
+        Me.txtDescripcion.Location = New System.Drawing.Point(369, 207)
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.PlaceholderText = ""
         Me.txtDescripcion.SelectedText = ""
@@ -685,6 +689,40 @@ Partial Class InterfazPrincipal
         Me.Guna2PictureBox1.TabIndex = 8
         Me.Guna2PictureBox1.TabStop = False
         '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BorderRadius = 10
+        Me.btnModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnModificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnModificar.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.btnModificar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.ForeColor = System.Drawing.Color.White
+        Me.btnModificar.Location = New System.Drawing.Point(47, 282)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(94, 47)
+        Me.btnModificar.TabIndex = 13
+        Me.btnModificar.Text = "Modificar"
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.White
+        Me.btnEliminar.BorderRadius = 10
+        Me.btnEliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEliminar.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.Location = New System.Drawing.Point(153, 282)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(94, 47)
+        Me.btnEliminar.TabIndex = 14
+        Me.btnEliminar.Text = "Eliminar"
+        '
         'InterfazPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -750,4 +788,6 @@ Partial Class InterfazPrincipal
     Friend WithEvents Label5 As Label
     Friend WithEvents btnCancelar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnEliminar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnModificar As Guna.UI2.WinForms.Guna2Button
 End Class
