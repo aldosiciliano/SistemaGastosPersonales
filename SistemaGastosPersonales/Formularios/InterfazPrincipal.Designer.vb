@@ -43,6 +43,8 @@ Partial Class InterfazPrincipal
         Me.txtBuscar = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2TabControl1 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnEliminar = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnModificar = New Guna.UI2.WinForms.Guna2Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -67,8 +69,6 @@ Partial Class InterfazPrincipal
         Me.txtApellidoPerfil = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtNombrePerfil = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.btnModificar = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnEliminar = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.DataGridViewHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -343,6 +343,40 @@ Partial Class InterfazPrincipal
         Me.TabPage1.Size = New System.Drawing.Size(959, 641)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Gastos Personales "
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.White
+        Me.btnEliminar.BorderRadius = 10
+        Me.btnEliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEliminar.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.Location = New System.Drawing.Point(153, 282)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(94, 47)
+        Me.btnEliminar.TabIndex = 14
+        Me.btnEliminar.Text = "Eliminar"
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.White
+        Me.btnModificar.BorderRadius = 10
+        Me.btnModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnModificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnModificar.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.btnModificar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.ForeColor = System.Drawing.Color.White
+        Me.btnModificar.Location = New System.Drawing.Point(47, 282)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(94, 47)
+        Me.btnModificar.TabIndex = 13
+        Me.btnModificar.Text = "Modificar"
         '
         'Label2
         '
@@ -688,40 +722,6 @@ Partial Class InterfazPrincipal
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox1.TabIndex = 8
         Me.Guna2PictureBox1.TabStop = False
-        '
-        'btnModificar
-        '
-        Me.btnModificar.BackColor = System.Drawing.Color.White
-        Me.btnModificar.BorderRadius = 10
-        Me.btnModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnModificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnModificar.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.btnModificar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificar.ForeColor = System.Drawing.Color.White
-        Me.btnModificar.Location = New System.Drawing.Point(47, 282)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(94, 47)
-        Me.btnModificar.TabIndex = 13
-        Me.btnModificar.Text = "Modificar"
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.BackColor = System.Drawing.Color.White
-        Me.btnEliminar.BorderRadius = 10
-        Me.btnEliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEliminar.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(79, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminar.ForeColor = System.Drawing.Color.White
-        Me.btnEliminar.Location = New System.Drawing.Point(153, 282)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(94, 47)
-        Me.btnEliminar.TabIndex = 14
-        Me.btnEliminar.Text = "Eliminar"
         '
         'InterfazPrincipal
         '

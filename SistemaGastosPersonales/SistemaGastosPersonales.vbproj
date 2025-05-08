@@ -102,6 +102,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\Conexion.vb" />
+    <Compile Include="Formularios\frmModificar.Designer.vb">
+      <DependentUpon>frmModificar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmModificar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modelos\Perfil.vb" />
     <Compile Include="Registro.vb">
       <SubType>Form</SubType>
@@ -146,6 +152,9 @@
     <Compile Include="Seguridad\Hash.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\frmModificar.resx">
+      <DependentUpon>frmModificar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\InterfazPrincipal.resx">
       <DependentUpon>InterfazPrincipal.vb</DependentUpon>
     </EmbeddedResource>
