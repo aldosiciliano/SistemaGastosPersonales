@@ -23,10 +23,10 @@ Partial Class frmModificar
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.cbxTipo = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Guna2ComboBox1 = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Guna2ComboBox2 = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Guna2ComboBox3 = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.DateTimePicker = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.cbxCategoria = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.cbxMetodo = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.cbxEntidad = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.dtpFecha = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.txtMonto = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtDescripcion = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnGuardar = New Guna.UI2.WinForms.Guna2Button()
@@ -44,73 +44,74 @@ Partial Class frmModificar
         Me.cbxTipo.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cbxTipo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbxTipo.ItemHeight = 30
+        Me.cbxTipo.Items.AddRange(New Object() {"Ingreso", "Gasto"})
         Me.cbxTipo.Location = New System.Drawing.Point(38, 40)
         Me.cbxTipo.Name = "cbxTipo"
         Me.cbxTipo.Size = New System.Drawing.Size(200, 36)
         Me.cbxTipo.TabIndex = 1
         '
-        'Guna2ComboBox1
+        'cbxCategoria
         '
-        Me.Guna2ComboBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ComboBox1.BorderRadius = 10
-        Me.Guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.Guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Guna2ComboBox1.ItemHeight = 30
-        Me.Guna2ComboBox1.Location = New System.Drawing.Point(38, 106)
-        Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
-        Me.Guna2ComboBox1.Size = New System.Drawing.Size(200, 36)
-        Me.Guna2ComboBox1.TabIndex = 2
+        Me.cbxCategoria.BackColor = System.Drawing.Color.Transparent
+        Me.cbxCategoria.BorderRadius = 10
+        Me.cbxCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxCategoria.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxCategoria.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxCategoria.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cbxCategoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cbxCategoria.ItemHeight = 30
+        Me.cbxCategoria.Location = New System.Drawing.Point(38, 106)
+        Me.cbxCategoria.Name = "cbxCategoria"
+        Me.cbxCategoria.Size = New System.Drawing.Size(200, 36)
+        Me.cbxCategoria.TabIndex = 2
         '
-        'Guna2ComboBox2
+        'cbxMetodo
         '
-        Me.Guna2ComboBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ComboBox2.BorderRadius = 10
-        Me.Guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.Guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Guna2ComboBox2.ItemHeight = 30
-        Me.Guna2ComboBox2.Location = New System.Drawing.Point(38, 180)
-        Me.Guna2ComboBox2.Name = "Guna2ComboBox2"
-        Me.Guna2ComboBox2.Size = New System.Drawing.Size(200, 36)
-        Me.Guna2ComboBox2.TabIndex = 3
+        Me.cbxMetodo.BackColor = System.Drawing.Color.Transparent
+        Me.cbxMetodo.BorderRadius = 10
+        Me.cbxMetodo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbxMetodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxMetodo.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxMetodo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxMetodo.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cbxMetodo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cbxMetodo.ItemHeight = 30
+        Me.cbxMetodo.Location = New System.Drawing.Point(38, 180)
+        Me.cbxMetodo.Name = "cbxMetodo"
+        Me.cbxMetodo.Size = New System.Drawing.Size(200, 36)
+        Me.cbxMetodo.TabIndex = 3
         '
-        'Guna2ComboBox3
+        'cbxEntidad
         '
-        Me.Guna2ComboBox3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ComboBox3.BorderRadius = 10
-        Me.Guna2ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.Guna2ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Guna2ComboBox3.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox3.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.Guna2ComboBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Guna2ComboBox3.ItemHeight = 30
-        Me.Guna2ComboBox3.Location = New System.Drawing.Point(38, 255)
-        Me.Guna2ComboBox3.Name = "Guna2ComboBox3"
-        Me.Guna2ComboBox3.Size = New System.Drawing.Size(200, 36)
-        Me.Guna2ComboBox3.TabIndex = 4
+        Me.cbxEntidad.BackColor = System.Drawing.Color.Transparent
+        Me.cbxEntidad.BorderRadius = 10
+        Me.cbxEntidad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbxEntidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxEntidad.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxEntidad.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbxEntidad.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cbxEntidad.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cbxEntidad.ItemHeight = 30
+        Me.cbxEntidad.Location = New System.Drawing.Point(38, 255)
+        Me.cbxEntidad.Name = "cbxEntidad"
+        Me.cbxEntidad.Size = New System.Drawing.Size(200, 36)
+        Me.cbxEntidad.TabIndex = 4
         '
-        'DateTimePicker
+        'dtpFecha
         '
-        Me.DateTimePicker.BorderRadius = 10
-        Me.DateTimePicker.Checked = True
-        Me.DateTimePicker.FillColor = System.Drawing.Color.White
-        Me.DateTimePicker.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.DateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.DateTimePicker.Location = New System.Drawing.Point(38, 332)
-        Me.DateTimePicker.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.DateTimePicker.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.DateTimePicker.Name = "DateTimePicker"
-        Me.DateTimePicker.Size = New System.Drawing.Size(212, 36)
-        Me.DateTimePicker.TabIndex = 5
-        Me.DateTimePicker.Value = New Date(2025, 4, 30, 11, 33, 30, 865)
+        Me.dtpFecha.BorderRadius = 10
+        Me.dtpFecha.Checked = True
+        Me.dtpFecha.FillColor = System.Drawing.Color.White
+        Me.dtpFecha.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.dtpFecha.Location = New System.Drawing.Point(38, 332)
+        Me.dtpFecha.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.dtpFecha.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(212, 36)
+        Me.dtpFecha.TabIndex = 5
+        Me.dtpFecha.Value = New Date(2025, 4, 30, 11, 33, 30, 865)
         '
         'txtMonto
         '
@@ -194,10 +195,10 @@ Partial Class frmModificar
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.txtDescripcion)
         Me.Controls.Add(Me.txtMonto)
-        Me.Controls.Add(Me.DateTimePicker)
-        Me.Controls.Add(Me.Guna2ComboBox3)
-        Me.Controls.Add(Me.Guna2ComboBox2)
-        Me.Controls.Add(Me.Guna2ComboBox1)
+        Me.Controls.Add(Me.dtpFecha)
+        Me.Controls.Add(Me.cbxEntidad)
+        Me.Controls.Add(Me.cbxMetodo)
+        Me.Controls.Add(Me.cbxCategoria)
         Me.Controls.Add(Me.cbxTipo)
         Me.Name = "frmModificar"
         Me.Text = "frmModificar"
@@ -206,10 +207,10 @@ Partial Class frmModificar
     End Sub
 
     Friend WithEvents cbxTipo As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Guna2ComboBox2 As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Guna2ComboBox3 As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents DateTimePicker As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents cbxCategoria As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents cbxMetodo As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents cbxEntidad As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents dtpFecha As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents txtMonto As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtDescripcion As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btnGuardar As Guna.UI2.WinForms.Guna2Button

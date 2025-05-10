@@ -30,13 +30,6 @@ Partial Class InterfazPrincipal
         Me.cbxCategoria = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.DateTimePicker = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.DataGridViewHistorial = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.ColumnFecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColumnTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColumnCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColumnMonto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LabelMonto = New System.Windows.Forms.Label()
         Me.txtMonto = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnAñadir = New Guna.UI2.WinForms.Guna2Button()
@@ -69,6 +62,14 @@ Partial Class InterfazPrincipal
         Me.txtApellidoPerfil = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtNombrePerfil = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.ColumnId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnFecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnMonto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnMetodo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnEntidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridViewHistorial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -140,7 +141,7 @@ Partial Class InterfazPrincipal
         Me.DataGridViewHistorial.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewHistorial.ColumnHeadersHeight = 30
         Me.DataGridViewHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DataGridViewHistorial.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnFecha, Me.ColumnTipo, Me.ColumnCategoria, Me.ColumnMonto, Me.Column6, Me.Column7, Me.Descripcion})
+        Me.DataGridViewHistorial.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnId, Me.ColumnFecha, Me.ColumnTipo, Me.ColumnCategoria, Me.ColumnMonto, Me.ColumnMetodo, Me.ColumnEntidad, Me.ColumnDescripcion})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -177,48 +178,6 @@ Partial Class InterfazPrincipal
         Me.DataGridViewHistorial.ThemeStyle.RowsStyle.Height = 22
         Me.DataGridViewHistorial.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DataGridViewHistorial.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'ColumnFecha
-        '
-        Me.ColumnFecha.HeaderText = "Fecha"
-        Me.ColumnFecha.Name = "ColumnFecha"
-        Me.ColumnFecha.ReadOnly = True
-        '
-        'ColumnTipo
-        '
-        Me.ColumnTipo.HeaderText = "Tipo"
-        Me.ColumnTipo.Name = "ColumnTipo"
-        Me.ColumnTipo.ReadOnly = True
-        '
-        'ColumnCategoria
-        '
-        Me.ColumnCategoria.HeaderText = "Categoria"
-        Me.ColumnCategoria.Name = "ColumnCategoria"
-        Me.ColumnCategoria.ReadOnly = True
-        '
-        'ColumnMonto
-        '
-        Me.ColumnMonto.HeaderText = "Monto"
-        Me.ColumnMonto.Name = "ColumnMonto"
-        Me.ColumnMonto.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Metodo"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "Entidad"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
         '
         'LabelMonto
         '
@@ -723,6 +682,55 @@ Partial Class InterfazPrincipal
         Me.Guna2PictureBox1.TabIndex = 8
         Me.Guna2PictureBox1.TabStop = False
         '
+        'ColumnId
+        '
+        Me.ColumnId.HeaderText = "Id"
+        Me.ColumnId.Name = "ColumnId"
+        Me.ColumnId.ReadOnly = True
+        Me.ColumnId.Visible = False
+        '
+        'ColumnFecha
+        '
+        Me.ColumnFecha.HeaderText = "Fecha"
+        Me.ColumnFecha.Name = "ColumnFecha"
+        Me.ColumnFecha.ReadOnly = True
+        '
+        'ColumnTipo
+        '
+        Me.ColumnTipo.HeaderText = "Tipo"
+        Me.ColumnTipo.Name = "ColumnTipo"
+        Me.ColumnTipo.ReadOnly = True
+        '
+        'ColumnCategoria
+        '
+        Me.ColumnCategoria.HeaderText = "Categoria"
+        Me.ColumnCategoria.Name = "ColumnCategoria"
+        Me.ColumnCategoria.ReadOnly = True
+        '
+        'ColumnMonto
+        '
+        Me.ColumnMonto.HeaderText = "Monto"
+        Me.ColumnMonto.Name = "ColumnMonto"
+        Me.ColumnMonto.ReadOnly = True
+        '
+        'ColumnMetodo
+        '
+        Me.ColumnMetodo.HeaderText = "Metodo"
+        Me.ColumnMetodo.Name = "ColumnMetodo"
+        Me.ColumnMetodo.ReadOnly = True
+        '
+        'ColumnEntidad
+        '
+        Me.ColumnEntidad.HeaderText = "Entidad"
+        Me.ColumnEntidad.Name = "ColumnEntidad"
+        Me.ColumnEntidad.ReadOnly = True
+        '
+        'ColumnDescripcion
+        '
+        Me.ColumnDescripcion.HeaderText = "Descripcion"
+        Me.ColumnDescripcion.Name = "ColumnDescripcion"
+        Me.ColumnDescripcion.ReadOnly = True
+        '
         'InterfazPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -748,6 +756,7 @@ Partial Class InterfazPrincipal
     End Sub
 
     Friend WithEvents cbxTipo As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents IdMovimiento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cbxCategoria As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents DateTimePicker As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents DataGridViewHistorial As Guna.UI2.WinForms.Guna2DataGridView
@@ -775,13 +784,6 @@ Partial Class InterfazPrincipal
     Friend WithEvents Guna2PictureBox3 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents cbxEntidad As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents cbxMetodo As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents ColumnFecha As DataGridViewTextBoxColumn
-    Friend WithEvents ColumnTipo As DataGridViewTextBoxColumn
-    Friend WithEvents ColumnCategoria As DataGridViewTextBoxColumn
-    Friend WithEvents ColumnMonto As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
     Friend WithEvents LabelIngresos As Label
     Friend WithEvents LabelGastos As Label
     Friend WithEvents Label2 As Label
@@ -790,4 +792,12 @@ Partial Class InterfazPrincipal
     Friend WithEvents Label1 As Label
     Friend WithEvents btnEliminar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnModificar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ColumnId As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnFecha As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnTipo As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnCategoria As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnMonto As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnMetodo As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnEntidad As DataGridViewTextBoxColumn
+    Friend WithEvents ColumnDescripcion As DataGridViewTextBoxColumn
 End Class
