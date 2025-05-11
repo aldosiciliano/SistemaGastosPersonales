@@ -553,8 +553,8 @@ Public Class InterfazPrincipal
         For Each fila As DataGridViewRow In DataGridViewHistorial.Rows
             If Not fila.IsNewRow Then
                 Try
-                    Dim tipo As String = fila.Cells(1).Value.ToString()
-                    Dim monto As Decimal = Convert.ToDecimal(fila.Cells(3).Value)
+                    Dim tipo As String = fila.Cells("ColumnTipo").Value.ToString()
+                    Dim monto As Decimal = Convert.ToDecimal(fila.Cells("ColumnMonto").Value)
 
                     If tipo = "Ingreso" Then
                         montoDisponible += monto
@@ -562,11 +562,9 @@ Public Class InterfazPrincipal
                         montoDisponible -= monto
                     End If
                 Catch ex As Exception
-                    ' Si una celda viene vacía o mal formateada, la ignora
                 End Try
             End If
         Next
-
         LabelMonto.Text = "$" & montoDisponible.ToString("N2")
     End Sub
     ' Función que calcula el monto de gastos e ingresos
@@ -577,23 +575,24 @@ Public Class InterfazPrincipal
         For Each fila As DataGridViewRow In DataGridViewHistorial.Rows
             If Not fila.IsNewRow Then
                 Try
-                    Dim tipo As String = fila.Cells(1).Value.ToString()
-                    Dim monto As Decimal = Convert.ToDecimal(fila.Cells(3).Value)
+                    Dim tipo As String = fila.Cells("ColumnTipo").Value.ToString()
+                    Dim monto As Decimal = Convert.ToDecimal(fila.Cells("ColumnMonto").Value)
 
                     If tipo = "Ingreso" Then
                         montoIngresos += monto
                     ElseIf tipo = "Gasto" Then
-                        montoGastos -= monto
+                        montoGastos += monto ' Cambiado para sumar gastos como positivo
                     End If
                 Catch ex As Exception
-                    ' Si una celda viene vacía o mal formateada, la ignora
+                    ' Ignorar errores en celdas vacías o mal formateadas
                 End Try
             End If
         Next
-
         LabelGastos.Text = "$" & montoGastos.ToString("N2")
         LabelIngresos.Text = "$" & montoIngresos.ToString("N2")
     End Sub
+
+
 
     Private Sub txtMonto_Enter(sender As Object, e As EventArgs) Handles txtMonto.Enter
         If txtMonto.Text = "Ingrese monto" Then
@@ -658,6 +657,8 @@ Public Class InterfazPrincipal
 
         ' Mostrar el formulario
         frm.ShowDialog()
+
+
     End Sub
 
     ' Método para actualizar el DataGridView
