@@ -336,36 +336,41 @@ Public Class InterfazPrincipal
     End Sub
 
     'Eliminar un movimiento
-    'Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-    '    If DataGridViewHistorial.SelectedRows.Count = 0 Then
-    '        MessageBox.Show("Seleccione un movimiento para eliminar.")
-    '        Return
-    '        End
-    '        Dim filaSeleccionada As DataGridViewRow = DataGridViewHistorial.SelectedRows(0)
-    '        Dim idMovimiento As Integer = Convert.ToInt32(filaSeleccionada.Cells("IdMovimiento").Value)
-    '        Dim confirmacion As DialogResult = MessageBox.Show("¿Está seguro de que desea eliminar este movimiento?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-    '        If confirmacion = DialogResult.No Then Return
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If DataGridViewHistorial.SelectedRows.Count = 0 Then
+            MessageBox.Show("Seleccione un movimiento para eliminar.")
+            Return
+        End If
 
-    '        Dim query As String = "DELETE FROM Movimientos WHERE IdMovimiento = @idMovimiento"
-    '        Try
-    '            Using conn As SQLiteConnection = Conexion.ObtenerConexion()
-    '                Using cmd As New SQLiteCommand(query, conn)
-    '                    cmd.Parameters.AddWithValue("@IdMovimiento", idMovimiento)
-    '                    Dim filasAfectadas As Integer = cmd.ExecuteNonQuery()
+        ' Obtener la fila seleccionada
+        Dim filaSeleccionada As DataGridViewRow = DataGridViewHistorial.SelectedRows(0)
+        Dim idMovimiento As Integer = Convert.ToInt32(filaSeleccionada.Cells("ColumnId").Value) ' Asegúrate de usar el nombre correcto de la columna
 
-    '                    If filasAfectadas > 0 Then
-    '                        MessageBox.Show("Movimiento eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    '                        CargarMovimientos() ' Actualizar el DataGridView
-    '                    Else
-    '                        MessageBox.Show("No se pudo eliminar el movimiento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '                    End If
-    '                End Using
-    '            End Using
-    '        Catch ex As Exception
-    '            MessageBox.Show($"Error al eliminar el movimiento: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '        End Try
-    '    End If
-    'End Sub
+        ' Confirmar la eliminación
+        Dim confirmacion As DialogResult = MessageBox.Show("¿Está seguro de que desea eliminar este movimiento?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If confirmacion = DialogResult.No Then Return
+
+        ' Consulta SQL para eliminar el registro
+        Dim query As String = "DELETE FROM Movimientos WHERE IdMovimiento = @idMovimiento"
+        Try
+            Using conn As SQLiteConnection = Conexion.ObtenerConexion()
+                Using cmd As New SQLiteCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@idMovimiento", idMovimiento)
+                    Dim filasAfectadas As Integer = cmd.ExecuteNonQuery()
+
+                    ' Verificar si se eliminó correctamente
+                    If filasAfectadas > 0 Then
+                        MessageBox.Show("Movimiento eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        CargarMovimientos() ' Actualizar el DataGridView
+                    Else
+                        MessageBox.Show("No se pudo eliminar el movimiento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show($"Error al eliminar el movimiento: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 
     ' Método para validar los campos de entrada
     Private Function ValidarCampos() As Boolean
