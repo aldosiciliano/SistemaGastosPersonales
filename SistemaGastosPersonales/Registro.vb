@@ -1,6 +1,38 @@
-﻿Imports System.Data.SQLite
+﻿Imports SistemaGastosPersonales.Modelos
 Imports SistemaGastosPersonales.Conexion
 Public Class Registro
+
+    Private usuarioController As New UsuarioController()
+    Private Sub BtnRegistrar_Click(sender As Object, e As EventArgs) Handles BtnRegistrar.Click
+
+        If Not ValidarCampo(TxtboxDNI, "DNI") Then Exit Sub
+        If Not ValidarCampo(TxtboxNombre, "Nombre") Then Exit Sub
+        If Not ValidarCampo(TxtboxApellido, "Apellido") Then Exit Sub
+        If Not ValidarCampo(TxtboxEmail, "Correo") Then Exit Sub
+        If Not ValidarCampo(TxtboxUser, "Usuario") Then Exit Sub
+        If Not ValidarCampo(TxtBoxPassword, "Contraseña") Then Exit Sub
+
+        Dim usuario As New Usuario With {
+        .Usuario = TxtboxUser.Text.Trim(),
+        .Contraseña = Hash.HashearSHA256(TxtBoxPassword.Text.Trim())
+        }
+
+        Dim perfil As New Perfil With {
+        .Nombre = TxtboxNombre.Text.Trim(),
+        .Apellido = TxtboxApellido.Text.Trim(),
+        .DNI = TxtboxDNI.Text.Trim(),
+        .Email = TxtboxEmail.Text.Trim()
+        }
+
+        If usuarioController.Registrar(usuario, perfil) Then
+            MessageBox.Show("Registro exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            FrmIniciarSesion.Show()
+            Me.Hide()
+        Else
+            MessageBox.Show("Error al registrar el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
+    End Sub
 
     ' Función de validación general
     Private Function ValidarCampo(textbox As Guna.UI2.WinForms.Guna2TextBox, textoPorDefecto As String) As Boolean
@@ -11,75 +43,6 @@ Public Class Registro
         End If
         Return True
     End Function
-
-    Private Sub BtnRegistrar_Click(sender As Object, e As EventArgs) Handles BtnRegistrar.Click
-
-        If Not ValidarCampo(TxtboxDNI, "DNI") Then Exit Sub
-        If Not ValidarCampo(TxtboxNombre, "Nombre") Then Exit Sub
-        If Not ValidarCampo(TxtboxApellido, "Apellido") Then Exit Sub
-        If Not ValidarCampo(TxtboxEmail, "Correo") Then Exit Sub
-        If Not ValidarCampo(TxtboxUser, "Usuario") Then Exit Sub
-        If Not ValidarCampo(TxtBoxPassword, "Contraseña") Then Exit Sub
-
-        Dim Usuario As String = TxtboxUser.Text.Trim()
-        Dim Contraseña As String = TxtBoxPassword.Text.Trim()
-        Dim DNI As String = TxtboxDNI.Text.Trim()
-        Dim Nombre As String = TxtboxNombre.Text.Trim()
-        Dim Apellido As String = TxtboxApellido.Text.Trim()
-        Dim Email As String = TxtboxEmail.Text.Trim()
-
-        'Hashear contraseña
-        Dim ContraseñaHasheada As String = Hash.HashearSHA256(Contraseña)
-
-        Try
-            Using conn = Conexion.ObtenerConexion()
-                Using transaccion = conn.BeginTransaction()
-                    Try
-                        ' 1. Insertar en la tabla Usuarios
-                        Dim queryUsuario As String = "INSERT INTO Usuarios (Usuario, Contraseña) VALUES (@Usuario, @Contraseña); SELECT last_insert_rowid();"
-                        Dim idUsuario As Integer
-                        Using comandoUsuario As New SQLiteCommand(queryUsuario, conn)
-                            comandoUsuario.Parameters.AddWithValue("@Usuario", Usuario)
-                            comandoUsuario.Parameters.AddWithValue("@Contraseña", ContraseñaHasheada)
-                            idUsuario = Convert.ToInt32(comandoUsuario.ExecuteScalar())
-                        End Using
-
-                        ' 2. Insertar en la tabla Perfil
-                        Dim queryPerfil As String = "INSERT INTO Perfil (DNI, Nombre, Apellido, Email, UsuarioID) VALUES (@DNI, @Nombre, @Apellido, @Email, @UsuarioID)"
-                        Using comandoPerfil As New SQLiteCommand(queryPerfil, conn)
-                            comandoPerfil.Parameters.AddWithValue("@DNI", DNI)
-                            comandoPerfil.Parameters.AddWithValue("@Nombre", Nombre)
-                            comandoPerfil.Parameters.AddWithValue("@Apellido", Apellido)
-                            comandoPerfil.Parameters.AddWithValue("@Email", Email)
-                            comandoPerfil.Parameters.AddWithValue("@UsuarioID", idUsuario)
-                            comandoPerfil.ExecuteNonQuery()
-                        End Using
-
-                        transaccion.Commit()
-                        MessageBox.Show("Cuenta registrada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-                    Catch ex As Exception
-                        transaccion.Rollback()
-                        MessageBox.Show("Error al registrar el perfil: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
-                End Using
-            End Using
-        Catch ex As Exception
-            MessageBox.Show($"Ocurrió un error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-        'Cierra ventana registro y abre iniciar sesion
-        FrmIniciarSesion.Show()
-        Me.Hide()
-    End Sub
-
-    'Private Sub LinkIniciarSesion_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkIniciarSesion.LinkClicked
-    '    Dim frmIniciarSesion As New FrmIniciarSesion()
-    '     Suscribir el evento FormClosed
-    '    AddHandler frmIniciarSesion.FormClosed, AddressOf FrmIniciarSesion_FormClosed
-    '    frmIniciarSesion.Show()
-    '    Me.Hide()
-    'End Sub
-    ' Manejador del evento FormClosed
     Private Sub FrmIniciarSesion_FormClosed(sender As Object, e As FormClosedEventArgs)
         ' Cerrar el formulario Registro cuando FrmIniciarSesion se cierre
         Me.Close()
@@ -114,7 +77,6 @@ Public Class Registro
             TxtboxApellido.Text = "Apellido"
         End If
     End Sub
-
 
 
     Private Sub TxtboxNombre_Enter(sender As Object, e As EventArgs) Handles TxtboxNombre.Enter
