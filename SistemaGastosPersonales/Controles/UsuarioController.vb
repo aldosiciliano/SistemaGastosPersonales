@@ -34,8 +34,32 @@ Public Class UsuarioController
                 End Using
             End Using
         Catch ex As Exception
-
         End Try
     End Function
 
+    Public Function IniciarSesion(usuario As String, contraseña As String) As Boolean
+        Try
+            Using conn As SQLiteConnection = Conexion.ObtenerConexion()
+                Dim queryIniciarSesion As String = "SELECT Contraseña FROM Usuarios WHERE Usuario = @Usuario"
+                Using cmd As New SQLiteCommand(queryIniciarSesion, conn)
+                    cmd.Parameters.AddWithValue("@Usuario", usuario)
+                    Dim result As Object = cmd.ExecuteScalar()
+
+                    If result Is Nothing Then
+                        Return False
+                    End If
+
+                    Dim contraseñaBD As String = result.ToString()
+                    Dim contraseñaIngresadaHash As String = Hash.HashearSHA256(contraseña)
+
+                    Console.WriteLine("Contraseña BD: " & contraseñaBD)
+                    Console.WriteLine("Contraseña ingresada hash: " & contraseñaIngresadaHash)
+
+                    Return contraseñaBD = contraseñaIngresadaHash
+                End Using
+            End Using
+        Catch ex As Exception
+            Throw New Exception("Error al iniciar sesión: " & ex.Message)
+        End Try
+    End Function
 End Class
